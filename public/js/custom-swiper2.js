@@ -1,0 +1,1 @@
+var interleaveOffset=0.5;var swiperOptions={loop:!0,speed:3000,direction:'vertical',grabCursor:!0,SlidesPerView:3,watchSlidesProgress:!0,mousewheelControl:!0,keyboardControl:!0,pagination:{el:'.swiper-pagination',clickable:!0,},autoplay:{delay:3000,},fadeEffect:{crossFade:!0}};var swiper=new Swiper(".swiper-container",swiperOptions)
