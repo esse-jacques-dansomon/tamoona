@@ -20,26 +20,33 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $userName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
      */
     private ?string $userEmail;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank()
+     * @Assert\Length(8, 10)
      */
     private ?string $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $subject;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     private ?string $message;
 

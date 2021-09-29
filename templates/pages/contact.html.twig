@@ -9,7 +9,7 @@
     <section class="contact-main pt-0 contact1 bg-grey">
         <div class="map mb-10">
             <div style="width: 100%">
-                <iframe height="500" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(mangal%20bazar)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d30875.557868812397!2d-17.456269777209002!3d14.68742394381089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xec173ac024570ad%3A0x25356e62d116c0a3!2stamoona!3m2!1d14.669709399999999!2d-17.4320111!5e0!3m2!1sfr!2ssn!4v1632919079499!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
         <div class="container">
@@ -17,15 +17,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div class="contact-info">
-                            <h3 class="">INFORMATION ABOUT US</h3>
-                            <p class="mb-4">Sagittis posuere id nam quis vestibulum vestibulum a facilisi at elit hendrerit scelerisque sodales nam dis orci.</p>
+                            <h3 class="">NOS INFORMATIONS</h3>
+                            <p class="mb-4">Tamoona est une agence de tourisme de luxe spécialisée dans l’organisation
+                                de séjours uniques </p>
                             <div class="info-item d-flex align-items-center bg-white mb-3">
                                 <div class="info-icon">
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-content pl-4">
-                                    <p class="m-0">445 Mount Eden Road, Mt Eden</p>
-                                    <p class="m-0">Basundhara Chakrapath</p>
+                                    <p class="m-0">2, place de l’indépendance Immeuble SDIH 3e étage                                    </p>
+                                    <p class="m-0">Dakar, Senegal</p>
                                 </div>
                             </div>
                             <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -33,8 +34,9 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="info-content pl-4">
-                                    <p class="m-0">977-444-666-888</p>
-                                    <p class="m-0">977-444-222-000</p>
+                                    <p class="m-0">+221 33 889 29 99</p>
+                                    <p class="m-0">+221 33 864 00 10</p>
+                                    <p class="m-0">+221 77 944 26 26</p>
                                 </div>
                             </div>
                             <div class="info-item d-flex align-items-center bg-white mb-3">
@@ -42,39 +44,46 @@
                                     <i class="fa fa-envelope"></i>
                                 </div>
                                 <div class="info-content pl-4">
-                                    <p class="m-0">info@Yatriiworld.com</p>
-                                    <p class="m-0">help@Yatriiworld.com</p>
+                                    <p class="m-0">reservations@tamoonatravel.com</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div id="contact-form1" class="contact-form">
-                            <h3 class="">Keep in Touch</h3>
-                            <p class="mb-4">Fundpress site thoughtfully designed for real humans which means the best user experience for your entire community.</p>
+                            <h3 class="">Nous contacter</h3>
+                            <p class="mb-4"> et exclusifs à une clientèle en quête d’expériences différentes et
+                                originales.d’expériences différentes et
+                                originales.</p>
 
                             <div id="contactform-error-msg"></div>
 
-                            <form method="post" action="#" name="contactform" id="contactform">
+                                {{ form_start(form) }}
+
                                 <div class="form-group">
-                                    <input type="text" name="first_name" class="form-control" id="fname" placeholder="First Name">
+                                    {{ form_row(form.userName) }}
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="text" name="last_name" class="form-control" id="lname" placeholder="Last Name">
+                                {{ form_row(form.subject) }}
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="email" name="email"  class="form-control" id="email" placeholder="Email">
+                                    {{ form_row(form.userEmail) }}
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="text" name="phone" class="form-control" id="phnumber" placeholder="Phone">
+                                    {{ form_row(form.phone) }}
                                 </div>
+
                                 <div class="textarea">
-                                    <textarea name="comments" placeholder="Enter a message"></textarea>
+                                    {{ form_row(form.message) }}
                                 </div>
                                 <div class="comment-btn text-right mt-1">
-                                    <input type="submit" class="nir-btn" id="submit" value="Send Message">
+                                    <input type="submit" class="nir-btn" id="submit" value="Envoyer ">
                                 </div>
-                            </form>
+                            {{ form_end(form) }}
+
                         </div>
                     </div>
                 </div>
