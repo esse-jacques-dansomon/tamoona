@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="FR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{% block title %}Travel Agency - Tamoona, your travel planner!{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -21,6 +22,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="{{ asset('/fonts/line-icons.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+
     {% endblock %}
 </head>
 <body>
@@ -32,11 +35,16 @@
     {% block javascripts %}
         <script src="{{ asset('/js/jquery-3.5.1.min.js') }}"></script>
         <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('/js/plugin.js') }}"></script>
         <script src="{{ asset('/js/main.js') }}"></script>
         <script src="{{ asset('/js/custom-swiper.js') }}"></script>
         <script src="{{ asset('/js/custom-nav.js') }}"></script>
-        <script src="{{ asset('/js/custom-date.js') }}"></script>
+        <script src="{{ asset('/js/plugin.js') }}"></script>
+
+        <!-- Flashy depends on jQuery -->
+        <!-- Load Flashy default JavaScript -->
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        <!-- Include Flashy default partial -->
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
     {% endblock %}
 </body>
 

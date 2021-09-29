@@ -1,5 +1,5 @@
-
 fm_elfinder:
+    assets_path: /assets
     instances:
         default:
             locale: fr # Langue
@@ -12,7 +12,7 @@ fm_elfinder:
                     uploads:
                         show_hidden: false # Masque les fichiers cachés
                         driver: LocalFileSystem # Pilote des fichiers
-                        path: public/images/ # Chemin d'upload
+                        path: images/ # Chemin d'upload
                         upload_allow: ['image/png', 'image/jpg', 'image/jpeg'] # Fichiers autorisés
                         upload_deny: ['all'] # Fichiers interdits
                         upload_max_size: 2M # Taille maximum
