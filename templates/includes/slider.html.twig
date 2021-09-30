@@ -1,0 +1,28 @@
+{%if sliders|length>=1%}
+<section class="banner overflow-hidden">
+    <div class="slider slider1">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for slider in sliders %}
+                <div class="swiper-slide">
+                    <div class="slide-inner">
+                        <div class="slide-image" style="background-image:url(/images/sliders/{{ slider.image }})"></div>
+                        <div class="swiper-content1 container">
+                            <h4 class="white">{{ slider.title }}</h4>
+                            <h1 class="white mb-4">{{ slider.content|raw }}</h1>
+                            <a href="{{ slider.url }}" class="per-btn">
+                                <span class="white">{{ slider.textbtn }}</span>
+                                <i class="fa fa-arrow-right white"></i>
+                            </a>
+                        </div>
+                        <div class="dot-overlay"></div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}

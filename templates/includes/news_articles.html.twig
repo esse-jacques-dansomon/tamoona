@@ -1,0 +1,49 @@
+{% if articles %}
+    <section class="news pb-5 bg-lgrey">
+        <div class="container">
+            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                <h2 class="m-0">NOTRE CARNET <span>DE VOYAGE</span></h2>
+                <p class="mb-0 ">
+                    Laissez-nous vous guider
+                </p>
+            </div>
+
+            <div class="news-outer">
+                <div class="row">
+
+                {% for article in articles %}
+                    <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
+                        <div class="news-item overflow-hidden">
+                            <div class="news-image">
+                                <img src="/images/articles/{{ article.image }}" alt="{{ article.title }}" height="260px" about="{{ article.title }}">
+                            </div>
+                            <div class="news-list mt-2 border-b pb-2 mb-2">
+                                <ul>
+                                    <li><a  class=""><i class="fa fa-calendar pink pr-1"></i> {{ article.createdAt|date("d M Y") }}</a></li>
+                                    <li><i class="fa fa-tag pink pl-3"></i>
+                                        {% for categoryPost in article.postsCategory %}
+                                        <a  class="" href="{{ path('blog_category', {'slug':categoryPost.slug}) }}">
+                                            {{ categoryPost.title }}
+                                        </a>
+                                        {% endfor %}
+                                    </li>
+
+                                    <li><a  class=""> <i class="fa fa-comment pink pr-1"></i> {{ article.comments|length }}</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="news-content mt-2 mb-1">
+                                <h4 class="bordernone mb-0"><a href="{{ path('article_detail', {'slug':article.slug}) }}">
+                                        {{ article.title|capitalize }}
+                                    </a></h4>
+                            </div>
+                            <a href="{{ path('article_detail', {'slug':article.slug}) }}" class=""><u>Lire l'article</u></a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+{% endif %}

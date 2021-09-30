@@ -15,7 +15,7 @@
                 <div class="col-lg-12">
                     <div class="blog-single">
                         <div class="blog-imagelist mb-3">
-                            <img src="{{ article.image }}" alt="{{ article.title }}" width="100%">
+                            <img src="/images/articles/{{ article.image }}" alt="{{ article.title }}" width="100%">
                         </div>
                         <div class="row">
                             <div class="col-lg-2 col-md-2">
@@ -106,7 +106,7 @@
                         <!-- blog review -->
                         {{ form_start(commentForm) }}
 
-                        <div class="single-add-review">
+                        <div class="">
                             <h4 class="">laisser un commentaire </h4>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -125,8 +125,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="">
-                                            <input type="submit" class="btn btn-large btn-block btn-primary"  value="Commenter ">
+                                        <div class="form-group">
+                                            {{ form_row(commentForm.envoyer) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="comment-btn text-right mt-1">
+                                            <input type="submit" class="btn btn-large btn-block btn-primary" id="submit" value="Envoyer ">
                                         </div>
                                     </div>
                                 </div>

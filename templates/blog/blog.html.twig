@@ -38,8 +38,7 @@
                                                 {% endfor %}
                                             </p>
                                         {% endif %}
-                                        <p class="mb-2 border-t pt-2">{{ article.Content|striptags|slice(0,150) }}
-                                            ...</p>
+                                        <p class="mb-2 border-t pt-2">{{ article.Content|striptags("&eacute;")|slice(0,200) }}...</p>
                                         <a href="{{ path('article_detail', {"slug":article.slug}) }}"
                                            class="grey font-weight-light">Lire La Suite <i
                                                     class="fa fa-long-arrow-alt-right"></i></a>

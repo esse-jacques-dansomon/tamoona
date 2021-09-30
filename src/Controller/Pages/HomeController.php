@@ -4,6 +4,7 @@ namespace App\Controller\Pages;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\ArticleRepository;
 use App\Repository\SliderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
@@ -28,15 +29,15 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/", name="home", methods={"get"})
+     * @Route("/", name="home")
      * @param SliderRepository $sliderRepository
      * @return Response
      */
-    public function index(SliderRepository $sliderRepository): Response
+    public function index(SliderRepository $sliderRepository, ArticleRepository $articleRepository): Response
     {
         $sliders = $sliderRepository->findByIsDisplayed(true);
-        dd($sliders);
-        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders]);
+        $articles = $articleRepository->findBy([], array("id"=>'DESC'), 3);
+        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles]);
     }
 
     /**
