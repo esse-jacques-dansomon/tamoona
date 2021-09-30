@@ -17,4 +17,5 @@ return [
     FM\ElfinderBundle\FMElfinderBundle::class => ['all' => true],
     MercurySeries\FlashyBundle\MercurySeriesFlashyBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
+    Leogout\Bundle\SeoBundle\LeogoutSeoBundle::class => ['all' => true],
 ];

@@ -1,0 +1,29 @@
+# By default, the SEO generators services are not loaded if you don't configure them. The following default configuration
+# loads the services but they won't render anything.
+# See https://github.com/leogout/SeoBundle#configuration-reference to configure them.
+# See https://github.com/leogout/SeoBundle#setting-values-dynamically to use them directly in your controller.
+leogout_seo:
+    general:
+        title: Tamoona your travel planner
+        description: Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour par ce qu’il est au courant de toutes les tendances.
+        image: http://images.com/poneys/12/large
+    basic:
+        title: Tammonna your travel planner agencey
+        description: Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour par ce qu’il est au courant de toutes les tendances.
+        keywords: Tamoona,tamoona, Travel, Senegal voyage,
+        canonical: http://test.com
+        robots:
+            index: true
+            follow: false
+    og:
+        title: Tamoona
+        description: Agence de voyage certifié IATA, un biellet d'avion ne suffit pas...Nous sommes à votre disposition pour planifier tout votre voyage avec nous
+        image: /images/Tamoona-carré.png
+        type: website # article, book, profile
+        url: http://test.com/articles
+    twitter:
+        title: Tamoona
+        description: Agence de voyage certifié IATA, un biellet d'avion ne suffit pas...Nous sommes à votre disposition pour planifier tout votre voyage avec nous
+        image: http://images.com/poneys/12/thumbnail
+        card: summary # summary_large_image
+        site: '@leogoutt' # optionnal

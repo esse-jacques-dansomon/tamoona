@@ -45,6 +45,7 @@ class HomeController extends AbstractController
      */
     public function myTravelAgency(): Response
     {
+
         return $this->render('pages/my_travel_agencey.html.twig');
     }
 

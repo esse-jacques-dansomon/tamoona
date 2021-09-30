@@ -16,6 +16,7 @@
         "friendsofsymfony/ckeditor-bundle": "^2.3",
         "helios-ag/fm-elfinder-bundle": "^10.1",
         "knplabs/knp-paginator-bundle": "^5.6",
+        "leogout/seo-bundle": "^1.2",
         "mercuryseries/flashy-bundle": "^4.0",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^6.1",
