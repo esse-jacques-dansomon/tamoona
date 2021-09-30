@@ -4,6 +4,7 @@ namespace App\Controller\Pages;
 
 use App\Entity\Contact;
 use App\Form\ContactType;
+use App\Repository\SliderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,12 +26,17 @@ class HomeController extends AbstractController
     {
         $this->flashy = $flashy;
     }
+
     /**
      * @Route("/", name="home", methods={"get"})
+     * @param SliderRepository $sliderRepository
+     * @return Response
      */
-    public function index(): Response
+    public function index(SliderRepository $sliderRepository): Response
     {
-        return $this->render('pages/home.html.twig');
+        $sliders = $sliderRepository->findByIsDisplayed(true);
+        dd($sliders);
+        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders]);
     }
 
     /**

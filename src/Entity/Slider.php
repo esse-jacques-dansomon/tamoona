@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\SliderRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=SliderRepository::class)
@@ -19,41 +20,31 @@ class Slider
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $title;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $subTitle;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\NotBlank()
      */
-    private ?string $context;
+    private ?string $content;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $textBtn1;
+    private ?string $textBtn;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $textBtn2;
+    private ?string $url;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $url1;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private ?string $url2;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private ?string $image;
 
@@ -79,74 +70,40 @@ class Slider
         return $this;
     }
 
-    public function getSubTitle(): ?string
+
+    public function getContent(): ?string
     {
-        return $this->subTitle;
+        return $this->content;
     }
 
-    public function setSubTitle(?string $subTitle): self
+    public function setContent(?string $content): self
     {
-        $this->subTitle = $subTitle;
+        $this->content = $content;
 
         return $this;
     }
 
-    public function getContext(): ?string
+    public function getTextBtn(): ?string
     {
-        return $this->context;
+        return $this->textBtn;
     }
 
-    public function setContext(?string $context): self
+    public function setTextBtn(?string $textBtn): self
     {
-        $this->context = $context;
+        $this->textBtn = $textBtn;
 
         return $this;
     }
 
-    public function getTextBtn1(): ?string
+
+    public function getUrl(): ?string
     {
-        return $this->textBtn1;
+        return $this->url;
     }
 
-    public function setTextBtn1(?string $textBtn1): self
+    public function setUrl(?string $url): self
     {
-        $this->textBtn1 = $textBtn1;
-
-        return $this;
-    }
-
-    public function getTextBtn2(): ?string
-    {
-        return $this->textBtn2;
-    }
-
-    public function setTextBtn2(?string $textBtn2): self
-    {
-        $this->textBtn2 = $textBtn2;
-
-        return $this;
-    }
-
-    public function getUrl1(): ?string
-    {
-        return $this->url1;
-    }
-
-    public function setUrl1(?string $url1): self
-    {
-        $this->url1 = $url1;
-
-        return $this;
-    }
-
-    public function getUrl2(): ?string
-    {
-        return $this->url2;
-    }
-
-    public function setUrl2(?string $url2): self
-    {
-        $this->url2 = $url2;
+        $this->url = $url;
 
         return $this;
     }

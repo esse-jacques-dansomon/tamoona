@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -29,11 +30,11 @@ class ContactCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('userName', 'Name'),
-            TextField::new('userEmail','email'),
+            EmailField::new('userEmail','email'),
             TextField::new('phone'),
             TextField::new('subject'),
             TextEditorField::new('message'),
-            DateTimeField::new('createdAt', 'Crée en'),
+            DateTimeField::new('createdAt'),
             BooleanField::new('isReaded', 'Lu'),
         ];
     }

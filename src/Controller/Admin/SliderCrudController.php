@@ -22,16 +22,13 @@ class SliderCrudController extends AbstractCrudController
     {
         return [
             TextField::new('title'),
-            TextField::new('subTitle'),
-            TextEditorField::new('context'),
+            TextEditorField::new('content'),
             imageField::new('image')->setBasePath("/images/sliders")
                 ->setUploadDir("public/images/sliders")
                 ->setRequired(false)
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
-            TextField::new('textBtn1'),
-            TextField::new('textBtn2'),
-            UrlField::new('url1', 'Button URl')->hideOnIndex(),
-            UrlField::new('url2', 'Button URl')->hideOnIndex(),
+            TextField::new('textBtn'),
+            UrlField::new('url', 'Button URl')->hideOnIndex(),
             BooleanField::new('isDisplayed'),
         ];
     }

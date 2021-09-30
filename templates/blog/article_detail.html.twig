@@ -104,9 +104,10 @@
 
 
                         <!-- blog review -->
+                        {{ form_start(commentForm) }}
+
                         <div class="single-add-review">
                             <h4 class="">laisser un commentaire </h4>
-                            {{ form_start(commentForm) }}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -124,14 +125,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-
-                                        <div class="form-btn text-center">
-                                            <button type="submit"  class="btn btn-large btn-block btn-primary mb-2 btn-submit">SE CONNECTER</button>
+                                        <div class="">
+                                            <input type="submit" class="btn btn-large btn-block btn-primary"  value="Commenter ">
                                         </div>
                                     </div>
                                 </div>
-                            {{ form_end(commentForm) }}
                         </div>
+
+                        {{ form_end(commentForm) }}
+
                     </div>
                 </div>
             </div>
