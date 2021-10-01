@@ -10,6 +10,7 @@ use App\Form\CommentType;
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
 use App\Repository\TagsRepository;
+use App\service\PaginationService;
 use Knp\Component\Pager\PaginatorInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,6 +26,7 @@ class BlogController extends AbstractController
     Private CategoryRepository $categoryRepository;
     private array $tags;
     private array $categories;
+    private PaginationService  $paginationService;
     /**
      * @var FlashyNotifier
      */
@@ -36,8 +38,11 @@ class BlogController extends AbstractController
      * @param TagsRepository $tagRepo
      * @param CategoryRepository $categorRepoe
      * @param FlashyNotifier $flashy
+     * @param PaginationService $paginationService
      */
-    public function __construct(ArticleRepository $articleRepoe, TagsRepository $tagRepo, CategoryRepository $categorRepoe, FlashyNotifier $flashy )
+    public function __construct(ArticleRepository $articleRepoe, TagsRepository $tagRepo,
+                                CategoryRepository $categorRepoe, FlashyNotifier $flashy,
+                                PaginationService  $paginationService)
     {
         $this->articleRepository  =  $articleRepoe;
         $this->tagsRepository  =  $tagRepo;
@@ -45,6 +50,7 @@ class BlogController extends AbstractController
         $this->flashy = $flashy;
         $this->tags = $this->tagsRepository->findAll();
         $this->categories = $this->categoryRepository->findAll();
+        $this->paginationService = $paginationService;
 
     }
 
@@ -59,12 +65,7 @@ class BlogController extends AbstractController
         $articles = $this->articleRepository->findAll();
         if($articles)
         {
-            $articles = $paginator->paginate(
-                $articles, /* query NOT result */
-                $request->query->getInt('page', 1), /*page number*/
-                4 /*limit per page*/
-            );
-            $articles->setTemplate('@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig');
+            $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
         }
 
         return $this->render('blog/blog.html.twig', [
@@ -87,13 +88,7 @@ class BlogController extends AbstractController
         $articles = $category->getPostsCategory();
         if($articles)
         {
-            $articles = $paginator->paginate(
-                $articles, /* query NOT result */
-                $request->query->getInt('page', 1), /*page number*/
-                4 /*limit per page*/
-            );
-            $articles->setTemplate('@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig');
-
+            $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
 
             return $this->render('blog/blog.html.twig', [
                 'articles' => $articles,
@@ -119,12 +114,8 @@ class BlogController extends AbstractController
         $articles = $tag->getArticles();
         if($articles)
         {
-            $articles = $paginator->paginate(
-                $articles, /* query NOT result */
-                $request->query->getInt('page', 1), /*page number*/
-                4 /*limit per page*/
-            );
-            $articles->setTemplate('@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig');
+            $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
+
         }
         return $this->render('blog/blog.html.twig', [
             'articles' => $articles,

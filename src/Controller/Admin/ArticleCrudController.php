@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -41,7 +42,6 @@ class ArticleCrudController extends AbstractCrudController
     public function createEntity(string $entityFqcn)
     {
         $article = new Article();
-
         $user = $this->getUser();
         $article->setAuthor($user);
         $article->setPublishedAt(new \DateTime());
@@ -55,7 +55,6 @@ class ArticleCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('title'),
-            AssociationField::new('author'),
             SlugField::new('slug')->setTargetFieldName('title')->hideOnIndex(),
             AssociationField::new('postsCategory'),
             AssociationField::new('tags'),
@@ -64,6 +63,7 @@ class ArticleCrudController extends AbstractCrudController
                 ->setRequired(false)
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
             TextareaField::new('content')->setFormType(CKEditorType::class)->hideOnIndex(),
+            TextareaField::new('resume')->hideOnIndex(),
             BooleanField::new('isDeleted'),
 
         ];

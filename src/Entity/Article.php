@@ -84,6 +84,12 @@ class Article
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank()
+     */
+    private $resume;
+
 
     public function __construct()
     {
@@ -277,6 +283,18 @@ class Article
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(?string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
     }
 
 
