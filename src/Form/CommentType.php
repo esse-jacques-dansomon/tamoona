@@ -39,10 +39,6 @@ class CommentType extends AbstractType
 
                     ]
                 ])
-            ->add('envoyer', SubmitType::class,
-                [
-                    'attr'=>['class'=>'form-control' ]
-                ])
         ;
     }
 

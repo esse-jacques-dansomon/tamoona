@@ -13,15 +13,3 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-
-
-/public/js/chart.js
-/public/js/custom-swiper1.js
-/public/js/custom-swiper2.js
-/public/js/custom-swiper3.js
-/public/js/custom-swiper4.js
-/public/js/custom-swiper5.js
-/public/js/dashboard.js
-/public/js/dashboard-custom.js
-/public/js/jpanelmenu.min.js
-/public/js/map.js

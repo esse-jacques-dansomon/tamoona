@@ -24,9 +24,12 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        $routeBuilder = $this->get(AdminUrlGenerator::class);
 
-        return $this->redirect($routeBuilder->setController(ContactCrudController::class)->generateUrl());
+        return $this->render('dashbord.html.twig');
+
+//        $routeBuilder = $this->get(AdminUrlGenerator::class);
+//
+//        return $this->redirect($routeBuilder->setController(ContactCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard

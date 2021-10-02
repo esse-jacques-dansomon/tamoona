@@ -3398,7 +3398,6 @@ section.call-to-action.maincounter{
 			width:100%!important;
 		}
 	}
-	
 }
 
 @media(max-width:639px){
@@ -3411,7 +3410,7 @@ section.call-to-action.maincounter{
 	.call-to-main{
 		.call-to-action{
 			padding:20px!important;
-		}	
+		}
 	}
 
 }
@@ -3429,8 +3428,7 @@ section.call-to-action.maincounter{
 
 /*         Team CSS        */
 
-/* ======================================== */	
-
+/* ======================================== */
 .our-team{
 	background-repeat:no-repeat;
 	background-position: center;
@@ -3676,11 +3674,11 @@ section.pricing-tab{
 		}
 
 		i{
-			font-size: 40px; 
-			color:$themecolor; 
-			position: absolute; 
-			right: -20px; 
-			top:-20px; 
+			font-size: 40px;
+			color:$themecolor;
+			position: absolute;
+			right: -20px;
+			top:-20px;
 			padding: 15px;
 			background:#fff;
 			box-shadow:$box-shadow;
@@ -3976,7 +3974,7 @@ section.pricing-tab{
 			.testimonials_one_text {
 				.testimonials_one_rating_box{display:inline-block;}
 				.testimonials_quote_icon{position:relative; bottom:0; right: 0;}
-			} 
+			}
 			&:after{
 				display:none;
 			}
@@ -4044,7 +4042,7 @@ section.pricing-tab{
 								color: $themecolor;
 							}
 						}
-					}	
+					}
 				}
 			}
 
@@ -4124,7 +4122,7 @@ section.pricing-tab{
 							color: $themecolor;
 						}
 					}
-				}	
+				}
 			}
 		}
 
@@ -4164,7 +4162,7 @@ section.pricing-tab{
 			    line-height:1.2;
 			}
 		}
-	}		
+	}
 }
 @media(max-width:1100px) and (min-width:1024px){
 	.news {
@@ -4260,7 +4258,6 @@ section.pricing-tab{
 	    @include newletter;
 	}
 }
-		
 .newsletter.newsletter1{
 	background: none;
 	.section-title{

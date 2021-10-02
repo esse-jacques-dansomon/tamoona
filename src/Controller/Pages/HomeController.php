@@ -6,11 +6,13 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use App\Repository\SliderRepository;
+use App\service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -53,9 +55,11 @@ class HomeController extends AbstractController
      * @Route("/contact", name="contact", methods={"GET|POST"})
      * @param Request $request
      * @param EntityManagerInterface $manager
+     * @param MailerService $mailerService
+     * @param MailerInterface $mailer
      * @return Response
      */
-    public function contact (Request $request, EntityManagerInterface $manager)
+    public function contact (Request $request, EntityManagerInterface $manager, MailerService $mailerService, MailerInterface $mailer)
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
@@ -64,11 +68,9 @@ class HomeController extends AbstractController
         {
             $manager->persist($contact);
             $manager->flush();
-            //mail
-            //$email->sendNotification($contact);
-
-            //notifier admin
-            //$email->notifierAdmin($contact->getSubject(), $contact->getMessage() );
+            //envoie de mail
+            $mail = $mailerService->sendEmail($contact);
+            $mailer->send($mail);
 
             $contact = new Contact();
             $form = $this->createForm(ContactType::class, $contact);
