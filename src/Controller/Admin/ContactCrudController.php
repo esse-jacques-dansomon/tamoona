@@ -11,6 +11,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 
 class ContactCrudController extends AbstractCrudController
 {
@@ -19,6 +21,19 @@ class ContactCrudController extends AbstractCrudController
         return Contact::class;
     }
 
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            // ...
+            ->remove(Crud::PAGE_INDEX, Action::NEW)
+            ->remove(Crud::PAGE_INDEX, Action::EDIT)
+            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+
+            ->remove(Crud::PAGE_DETAIL, Action::EDIT)
+            ->remove(Crud::PAGE_DETAIL, Action::DELETE)
+            ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            ;
+    }
   public function configureCrud(Crud $crud): Crud
   {
       return $crud->setDefaultSort(['id' => 'DESC']);
@@ -31,10 +46,10 @@ class ContactCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('userName', 'Name'),
             EmailField::new('userEmail','email'),
-            TextField::new('phone'),
-            TextField::new('subject'),
-            TextEditorField::new('message'),
-            DateTimeField::new('createdAt'),
+            TextField::new('phone', 'Télephone'),
+            TextField::new('subject', "Subjet"),
+            TextEditorField::new('message', 'Message'),
+            DateTimeField::new('createdAt', 'Créé En'),
             BooleanField::new('isReaded', 'Lu'),
         ];
     }

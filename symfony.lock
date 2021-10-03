@@ -94,6 +94,9 @@
     "egulias/email-validator": {
         "version": "3.1.1"
     },
+    "firebase/php-jwt": {
+        "version": "v5.4.0"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
@@ -108,6 +111,33 @@
         "files": [
             "./config/packages/fos_ckeditor.yaml"
         ]
+    },
+    "google/apiclient": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "49c5d7a66d863d28513979bf0666dc77599100c0"
+        },
+        "files": [
+            "./config/packages/google_apiclient.yaml"
+        ]
+    },
+    "google/apiclient-services": {
+        "version": "v0.214.0"
+    },
+    "google/auth": {
+        "version": "v1.18.0"
+    },
+    "guzzlehttp/guzzle": {
+        "version": "7.3.0"
+    },
+    "guzzlehttp/promises": {
+        "version": "1.4.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "2.0.0"
     },
     "helios-ag/fm-elfinder-bundle": {
         "version": "10.0",
@@ -143,6 +173,9 @@
             "./config/packages/leogout_seo.yaml"
         ]
     },
+    "mediafigaro/google-analytics-api-symfony": {
+        "version": "1.22"
+    },
     "mercuryseries/flashy-bundle": {
         "version": "v4.0.0"
     },
@@ -154,6 +187,12 @@
     },
     "nikic/php-parser": {
         "version": "v4.13.0"
+    },
+    "paragonie/constant_time_encoding": {
+        "version": "v2.4.0"
+    },
+    "paragonie/random_compat": {
+        "version": "v9.99.100"
     },
     "phar-io/manifest": {
         "version": "2.0.3"
@@ -169,6 +208,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.5.0"
+    },
+    "phpseclib/phpseclib": {
+        "version": "3.0.10"
     },
     "phpspec/prophecy": {
         "version": "1.14.0"
@@ -211,11 +253,23 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
+    "psr/http-client": {
+        "version": "1.0.1"
+    },
+    "psr/http-factory": {
+        "version": "1.0.1"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/link": {
         "version": "1.0.0"
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -667,6 +721,18 @@
     },
     "symfony/yaml": {
         "version": "v5.3.6"
+    },
+    "symfonycasts/reset-password-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "97c1627c0384534997ae1047b93be517ca16de43"
+        },
+        "files": [
+            "./config/packages/reset_password.yaml"
+        ]
     },
     "theseer/tokenizer": {
         "version": "1.2.1"

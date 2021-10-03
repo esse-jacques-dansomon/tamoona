@@ -3,8 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{% block title %}Travel Agency - Tamoona, your travel planner!{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/Tamoona-carré.png') }}"/>
@@ -12,22 +13,30 @@
 
     {% endblock %}
     {% block stylesheets %}
-        {% include("includes/link.html.twig") %}
-
+        {{ include("includes/link.html.twig") }}
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
     {% endblock %}
-    <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
 
 </head>
 <body>
     {{ include('/includes/header.html.twig') }}
+
+
     {% block body %}
 
     {% endblock %}
+
+
     {{ include('/includes/footer.html.twig') }}
     {% block javascripts %}
-        {% include("includes/js.html.twig") %}
+
+        <!-- Flashy depends on jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
         <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
         {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+        {% include("includes/js.html.twig") %}
+
+
     {% endblock %}
 </body>
 

@@ -117,5 +117,36 @@
     <!-- News Ends -->
 
 
+    <!-- Newsletter Starts -->
+    <section class="newsletter-area m-0 pb-2 pt-3" style="background-color: #6F512F!important;">
+        <div class="container">
+            <div class="newsletter-main">
+                <div class="newsletter-wrapper">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="newsletter-content-wrapper d-sm-flex align-items-center">
+                                <div class="newsletter-icon">
+                                    <i class="fa fa-envelope-open white"></i>
+                                </div>
+                                <div class="newsletter-content ml-4">
+                                    <p class="m-0 white">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="newsletter-form">
+                                {{ form_start(form) }}
+                                    {{ form_row(form.email) }}
+                                    <button class="nir-btn" style="background-color: #162241!important;">S'inscrire</button>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Ends -->
+
 
 {% endblock %}

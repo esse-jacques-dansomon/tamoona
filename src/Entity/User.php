@@ -41,6 +41,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string", nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 6,
+     *      max = 40,
+     *      minMessage = "Votre mot de passe doit etre au moins  {{ limit }} characteres" ,
+     *      maxMessage = "Votre mot de passe doit etre au plus  {{ limit }} characteres"
+     * )
      */
     private ?string $password ;
 
@@ -74,6 +81,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\ManyToOne(targetEntity=Role::class, inversedBy="users")
      * @ORM\JoinColumn(nullable=true)
+     * @Assert\NotBlank()
      */
     private ?Role $role;
 

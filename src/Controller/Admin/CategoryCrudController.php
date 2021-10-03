@@ -35,10 +35,10 @@ class CategoryCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('title'),
+            TextField::new('title', 'Tire'),
             SlugField::new('slug')->setTargetFieldName('title'),
-            TextEditorField::new('description'),
-            AssociationField::new('categoryParente'),
+            TextEditorField::new('description', 'Description'),
+            AssociationField::new('categoryParente', 'Categorie Parente'),
             imageField::new('image')->setBasePath("/images/categories")
                 ->setUploadDir("public/images/categories")
                 ->setRequired(false)

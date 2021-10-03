@@ -56,15 +56,14 @@ class ArticleCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('title'),
             SlugField::new('slug')->setTargetFieldName('title')->hideOnIndex(),
-            AssociationField::new('postsCategory'),
-            AssociationField::new('tags'),
+            AssociationField::new('postsCategory', "Categories"),
+            AssociationField::new('tags', 'Tags'),
+            TextareaField::new('resume', "Résumé de l'article"),
             imageField::new('image')->setBasePath("/images/articles")
                 ->setUploadDir("public/images/articles")
                 ->setRequired(false)
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
-            TextareaField::new('content')->setFormType(CKEditorType::class)->hideOnIndex(),
-            TextareaField::new('resume')->hideOnIndex(),
-            BooleanField::new('isDeleted'),
+            TextareaField::new('content', "Contenu de l'article")->setFormType(CKEditorType::class)->hideOnIndex(),
 
         ];
     }

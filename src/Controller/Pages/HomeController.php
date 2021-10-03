@@ -3,7 +3,9 @@
 namespace App\Controller\Pages;
 
 use App\Entity\Contact;
+use App\Entity\Newsletter;
 use App\Form\ContactType;
+use App\Form\NewsletterType;
 use App\Repository\ArticleRepository;
 use App\Repository\SliderRepository;
 use App\service\MailerService;
@@ -33,13 +35,33 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param SliderRepository $sliderRepository
-     * @return Response
+     * @param ArticleRepository $articleRepository
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @return void
      */
-    public function index(SliderRepository $sliderRepository, ArticleRepository $articleRepository): Response
+    public function index(SliderRepository $sliderRepository, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $manager): Response
     {
         $sliders = $sliderRepository->findByIsDisplayed(true);
         $articles = $articleRepository->findBy([], array("id"=>'DESC'), 3);
-        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles]);
+        $newsletter = new Newsletter();
+        $form = $this->createForm(NewsletterType::class, $newsletter);
+
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($newsletter);
+            $manager->flush();
+            $newsletter = new Newsletter();
+            $form = $this->createForm(NewsletterType::class, $newsletter);
+            //add flasy
+            $this->flashy->success('Vous étes bien inscris merci !');
+        }
+        if($form->isSubmitted() && !$form->isValid()){
+            $this->flashy->error('Vérifier votre email, c\'est incorrect !');
+        }
+
+        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView()]);
     }
 
     /**
@@ -47,7 +69,6 @@ class HomeController extends AbstractController
      */
     public function myTravelAgency(): Response
     {
-
         return $this->render('pages/my_travel_agencey.html.twig');
     }
 
@@ -78,6 +99,9 @@ class HomeController extends AbstractController
             $this->flashy->success('Votre message a ete bien envoyer');
 
         }
+        if($form->isSubmitted() && !$form->isValid())
+            $this->flashy->error('Le formulaire remplie contie des ereurs veuillez les corriger ');
+
         return $this->render("pages/contact.html.twig",
             ['form'=>$form->createView()]) ;
     }

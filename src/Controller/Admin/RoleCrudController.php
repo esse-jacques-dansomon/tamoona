@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Role;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class RoleCrudController extends AbstractCrudController
 {
@@ -22,4 +24,13 @@ class RoleCrudController extends AbstractCrudController
         ];
     }
     */
+
+    public function configureFields(string $pageName): iterable
+    {
+        return [
+            IdField::new('id')->hideOnForm(),
+            TextField::new('roleName', "Rôle"),
+            TextField::new('libelle', 'Libelle/Titre'),
+        ];
+    }
 }

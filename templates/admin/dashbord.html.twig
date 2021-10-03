@@ -1,0 +1,51 @@
+{% extends '@!EasyAdmin/page/content.html.twig' %}
+
+
+{% block content %}
+    <link href="{{ asset('/css/dashboard.css') }}" rel="stylesheet" type="text/css">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-content">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="notification success">
+                        <p class="m-0">Bienvenue {{ app.user.firstname }} {{ app.user.lastname }}</p>
+                        <a class="notification-close" href="#"><i class="fa fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <!-- Item -->
+                <div class="col-lg-4 col-md-12 col-xs-12">
+                    <div class="dashboard-stat mb-4">
+                        <div class="dashboard-stat-content"><h4>{{ contacts }}</h4> <span>Messages non lus</span></div>
+                        <div class="dashboard-stat-icon"><i class="im im-icon-Map2"></i></div>
+                        <div class="dashboard-stat-item"><p>Vous n'avez pas encore repondu à {{ contacts }}!</p></div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="dashboard-stat mb-4">
+                        <div class="dashboard-stat-content"><h4>{{ newsletters }}</h4> <span>Abonnés </span></div>
+                        <div class="dashboard-stat-icon"><i class="im im-icon-Line-Chart"></i></div>
+                        <div class="dashboard-stat-item"><p>Vous avez {{ newsletters }} abonnés à votre newsletter </p></div>
+                    </div>
+                </div>
+
+
+                <!-- Item -->
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="dashboard-stat mb-4">
+                        <div class="dashboard-stat-content"><h4>{{ comments }}</h4> <span>Commentaires</span></div>
+                        <div class="dashboard-stat-icon"><i class="im im-icon-Add-UserStar"></i></div>
+                        <div class="dashboard-stat-item"><p> vous avez {{ comments }} commentaires non validés</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('/js/jpanelmenu.min.js') }}"></script>
+    <script src="{{ asset('/js/dashboard_custom.js') }}"></script>
+{% endblock %}

@@ -15,6 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
+
 class CommentCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
@@ -26,8 +27,13 @@ class CommentCrudController extends AbstractCrudController
     {
         return $actions
             // ...
+            ->remove(Crud::PAGE_INDEX, Action::NEW)
+            ->remove(Crud::PAGE_INDEX, Action::EDIT)
+            ->remove(Crud::PAGE_INDEX, Action::DELETE)
+
+            ->remove(Crud::PAGE_DETAIL, Action::EDIT)
+            ->remove(Crud::PAGE_DETAIL, Action::DELETE)
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_ADD_ANOTHER)
             ;
     }
 
@@ -35,12 +41,12 @@ class CommentCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('userName'),
-            EmailField::new('userEmail'),
-            TextEditorField::new('content'),
+            TextField::new('userName', 'Nom'),
+            EmailField::new('userEmail', 'Email'),
+            TextEditorField::new('content', "Message"),
             AssociationField::new('article'),
-            BooleanField::new('isValidated'),
-            DateTimeField::new('createdAt'),
+            BooleanField::new('isValidated', 'Valider'),
+            DateTimeField::new('createdAt', 'Créé En'),
         ];
     }
 
