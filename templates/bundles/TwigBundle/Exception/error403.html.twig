@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Yatriiworld - Travel and Tours Booking Template</title>
+    <title>Tamoona travel sénégal</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.png') }}">
     <!-- Bootstrap core CSS -->
@@ -14,7 +14,7 @@
     <!--Custom CSS-->
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css">
     <!--Plugin CSS-->
-    <link href="{{ path('/css/plugin.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/plugin.css') }}" rel="stylesheet" type="text/css">
     <!--Flaticons CSS-->
     <link href="{{ asset('/fonts/flaticon.css') }}" rel="stylesheet" type="text/css">
     <!--Font Awesome-->
@@ -37,7 +37,7 @@
 
         <div class="error-content text-center">
             <h2 class="mb-2">Oops! Page non trouvée </h2>
-                <img src="images/404-1.svg" alt="" class="mb-4 w-75 mx-auto">
+                <img src="{{ asset('images/404-1.svg') }}" alt="" class="mb-4 w-75 mx-auto">
                 <h3 class="m-0">Vous n'avez pas les autourisations necessaires</h3>
                 <div class="error-btn mt-4">
                     <a href="{{ path('home') }}" class="nir-btn mr-2">Acceuil</a>
@@ -54,21 +54,11 @@
 </div>
 <!-- Back to top ends -->
 
-<!-- search popup -->
-<div id="search1">
-    <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="type keyword(s) here" />
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-</div>
-
-<!-- *Scripts* -->
 <!-- *Scripts* -->
 <script src="{{ asset('/js/jquery-3.5.1.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('/js/plugin.js"') }}"></script>
+<script src="{{ asset('/js/plugin.js') }}"></script>
 <script src="{{ asset('/js/main.js') }}"></script>
-<script src="{{ path('/js/custom-nav.js') }}"></script>
+<script src="{{ asset('/js/custom-nav.js') }}"></script>
 </body>
 </html>

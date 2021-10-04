@@ -154,6 +154,9 @@ class BlogController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('article_detail', ['slug'=>$article->getSlug()]);
         }
+        if($commentForm->isSubmitted() && !$commentForm->isValid()){
+            $this->flashy->error('Le formulaire remplie contient des erreurs');
+        }
 
         return $this->render('blog/article_detail.html.twig', [
             'article' => $article,

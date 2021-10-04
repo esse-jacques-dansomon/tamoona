@@ -38,7 +38,7 @@ class HomeController extends AbstractController
      * @param ArticleRepository $articleRepository
      * @param Request $request
      * @param EntityManagerInterface $manager
-     * @return void
+     * @return Response
      */
     public function index(SliderRepository $sliderRepository, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $manager): Response
     {
