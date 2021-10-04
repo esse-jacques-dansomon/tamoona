@@ -33,7 +33,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="home", methods={"get|post"})
      * @param SliderRepository $sliderRepository
      * @param ArticleRepository $articleRepository
      * @param Request $request
@@ -96,11 +96,11 @@ class HomeController extends AbstractController
             $contact = new Contact();
             $form = $this->createForm(ContactType::class, $contact);
             //add flasy
-            $this->flashy->success('Votre message a ete bien envoyer');
+            $this->flashy->success('Votre message a ete bien envoyé');
 
         }
         if($form->isSubmitted() && !$form->isValid())
-            $this->flashy->error('Le formulaire remplie contie des ereurs veuillez les corriger ');
+            $this->flashy->error('Le formulaire rempli contient des ereurs, veuillez les corriger svp ');
 
         return $this->render("pages/contact.html.twig",
             ['form'=>$form->createView()]) ;
