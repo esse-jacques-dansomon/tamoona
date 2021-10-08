@@ -1,0 +1,43 @@
+a:hover {
+    color:#c8ad7f !important;
+}
+a:hover::before {
+    color:#c8ad7f !important;
+}
+a:hover::after {
+    color:#c8ad7f !important;
+}
+
+footer .footer-upper .footer-links ul li a:hover{
+    color:#c8ad7f !important;
+
+}
+
+.form-main .form-content .form-navtab .nav-tabs li.active a {
+    background: #212529!important;
+    color: #fff;
+    border: none;
+    transition: all 0.5s;
+}
+
+.form-main .form-content .form-navtab .nav-tabs li a:hover{
+    background: #b3aeae;
+    color: black!important;
+}
+
+.per-btn:hover:before{
+  background-color: #c8ad7f !important;
+}
+
+.breadcrumb li a {
+    color:black;
+}
+
+.dot-overlay {
+    background: #a9843785 !important;
+    opacity: .6;
+}
+
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+    /*transform: translate3d(0,0,0); */
+}
