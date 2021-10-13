@@ -62,7 +62,8 @@ class ArticleCrudController extends AbstractCrudController
                 ->setUploadDir("public/images/articles")
                 ->setRequired(false)
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
-            TextEditorField::new('content', "Contenu de l'article"),
+            //TextEditorField::new('content', "Contenu de l'article"),
+            TextareaField::new('content', "Contenu de l'article")->setFormType(CKEditorType::class)->hideOnIndex(),
 
         ];
     }
