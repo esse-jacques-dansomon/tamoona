@@ -36,6 +36,9 @@ class ResetPasswordController extends AbstractController
      * Display & process form to request a password reset.
      *
      * @Route("", name="app_forgot_password_request")
+     * @param Request $request
+     * @param MailerInterface $mailer
+     * @return Response
      */
     public function request(Request $request, MailerInterface $mailer): Response
     {
@@ -49,7 +52,7 @@ class ResetPasswordController extends AbstractController
             );
         }
 
-        return $this->render('reset_password/request.html.twig', [
+        return $this->render('frontend/reset_password/request.html.twig', [
             'requestForm' => $form->createView(),
         ]);
     }
@@ -67,7 +70,7 @@ class ResetPasswordController extends AbstractController
             $resetToken = $this->resetPasswordHelper->generateFakeResetToken();
         }
 
-        return $this->render('reset_password/check_email.html.twig', [
+        return $this->render('frontend/reset_password/check_email.html.twig', [
             'resetToken' => $resetToken,
         ]);
     }
@@ -76,6 +79,10 @@ class ResetPasswordController extends AbstractController
      * Validates and process the reset URL that the user clicked in their email.
      *
      * @Route("/reset/{token}", name="app_reset_password")
+     * @param Request $request
+     * @param UserPasswordHasherInterface $userPasswordHasherInterface
+     * @param string|null $token
+     * @return Response
      */
     public function reset(Request $request, UserPasswordHasherInterface $userPasswordHasherInterface, string $token = null): Response
     {
@@ -126,7 +133,7 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('admin');
         }
 
-        return $this->render('reset_password/reset.html.twig', [
+        return $this->render('frontend/reset_password/reset.html.twig', [
             'resetForm' => $form->createView(),
         ]);
     }
@@ -161,7 +168,7 @@ class ResetPasswordController extends AbstractController
             ->from(new Address('essedansomon@gmail.com', 'Tamoona Your Travel Planner'))
             ->to($user->getEmail())
             ->subject('Your password reset request')
-            ->htmlTemplate('reset_password/email.html.twig')
+            ->htmlTemplate('frontend/reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,
             ])

@@ -10,7 +10,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -62,7 +61,8 @@ class ArticleCrudController extends AbstractCrudController
                 ->setUploadDir("public/images/articles")
                 ->setRequired(false)
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
-            TextEditorField::new('content', "Contenu de l'article"),
+            //TextEditorField::new('content', "Contenu de l'article"),
+            TextareaField::new('content', "Contenu de l'article")->setFormType(CKEditorType::class)->hideOnIndex(),
 
         ];
     }

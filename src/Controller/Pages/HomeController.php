@@ -61,7 +61,7 @@ class HomeController extends AbstractController
             $this->flashy->error('Vérifier votre email, c\'est incorrect !');
         }
 
-        return $this->render('pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView()]);
+        return $this->render('frontend/pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView()]);
     }
 
     /**
@@ -69,7 +69,7 @@ class HomeController extends AbstractController
      */
     public function myTravelAgency(): Response
     {
-        return $this->render('pages/my_travel_agencey.html.twig');
+        return $this->render('frontend/pages/my_travel_agencey.html.twig');
     }
 
     /**
@@ -102,7 +102,15 @@ class HomeController extends AbstractController
         if($form->isSubmitted() && !$form->isValid())
             $this->flashy->error('Le formulaire rempli contient des ereurs, veuillez les corriger svp ');
 
-        return $this->render("pages/contact.html.twig",
+        return $this->render("frontend/pages/contact.html.twig",
             ['form'=>$form->createView()]) ;
+    }
+
+    /**
+     * @Route("/lite")
+    */
+    public  function admin()
+    {
+        return $this->render('backend/pages/dashbord.html.twig');
     }
 }

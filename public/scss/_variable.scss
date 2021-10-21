@@ -6,8 +6,8 @@
 $lgrey:#fbfbfb;
 $grey:#f1f1f1;
 $white:#fff;
-$bgrey:#777;
-$black:#3f3f3f;
+$bgrey:#000000;
+$black:#000000;
 $lightblue:#6F512F;
 $fullblack:#000000;
 $themecolor:#6F512F;
@@ -35,4 +35,4 @@ $size100: 100%;
 $borderall:1px solid $grey;
 $borderdashed:1px dashed $grey;
 
-$box-shadow:0 0 15px #cccccc37;
+$box-shadow:0 0 15px $fullblack;

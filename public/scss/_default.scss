@@ -437,7 +437,7 @@ table {
 .color-overlay{
 	top: inherit;
 	bottom:0;
-	background:linear-gradient(to bottom, transparent, #162241);
+	background:linear-gradient(to bottom, transparent, $fullblack);
 }
 
 .black-overlay{
@@ -495,7 +495,7 @@ section{
 iframe{width: 100%; border:none;}
 
 .border-t{
-	border-top: 2px dashed #cccccc5e;
+	border-top: 2px dashed $fullblack;
 }
 
 .box-shadow{box-shadow: $box-shadow;}
@@ -692,7 +692,7 @@ button{border:none;}
 	&:hover{
 		&:before {
 		  width: 100%;
-		  background: #fb7f6a;
+		  background: $fullblack;
 		}
 		i {
 		  transform: translateX(0);
@@ -716,7 +716,7 @@ button{border:none;}
     color:$white;
     display: inline-block;
     border-radius:0px;
-    box-shadow: 0px 0px 0px 4px rgba(255,255,255,0.1);
+    box-shadow: 0px 0px 0px 4px $fullblack;
     &:hover{
 		background:$themecolor2; 
 		transition: $transition;
@@ -810,7 +810,7 @@ input#submit:hover{
 				    padding: 12px 20px 12px;
 				    transition:$transition;
 				    &:hover{
-				    	background:#2a92d6!important;
+				    	background:$fullblack!important;
 				    	transition:$transition;
 				    	color: $white;
 				    }
@@ -918,7 +918,7 @@ input#submit:hover{
 .alert{
     margin-bottom: 10px;
     border-radius: 0px;
-    color: #e83737;
+    color: $fullblack;
     padding: 0;
     .alert-success{
     	background:transparent;
@@ -947,7 +947,7 @@ input#submit:hover{
 		    z-index: -1;
 		    content: '';
 		    display: block;
-		    border: 5px solid #666;
+		    border: 5px solid $fullblack;
     	}
     	span{
     		position: absolute;
@@ -955,16 +955,16 @@ input#submit:hover{
 		    width: 225px;
 		    padding: 10px 0;
 		    background-color: $themecolor2;
-		    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+		    box-shadow: 0 5px 10px $fullblack;
 		    color: #fff;
 		    font-size:18px;
-		    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+		    text-shadow: 0 1px 1px $fullblack;
 		    text-transform: uppercase;
 		    text-align: center;
     	}
 
     	span.open{
-    		background: #5ECFB1;
+    		background: $fullblack;
     	}
     }
 

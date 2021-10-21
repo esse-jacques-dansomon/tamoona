@@ -1,0 +1,86 @@
+{% extends 'frontend/base.html.twig' %}
+            {% block seo_head %}
+                {{ leogout_seo() }}
+            {% endblock %}
+{% block title %}Travel Agency - Tamoona, Blog{% endblock %}
+
+{% block body %}
+
+    {% if  categoryTile is defined %}
+        {{ include('frontend//includes/bread_crumd.html.twig', {'page_name': categoryTile }) }}
+    {% elseif  tagTitle is defined %}
+        {{ include('frontend//includes/bread_crumd.html.twig', {'page_name': tagTitle }) }}
+    {% else %}
+        {{ include('frontend//includes/bread_crumd.html.twig', {'page_name': 'Blog'}) }}
+    {% endif %}
+<!-- BreadCrumd starts -->
+
+{% if articles.count>=1 %}
+<!-- blog starts -->
+<section class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mb-4">
+                <div class="row">
+
+                    {% if articles %}
+                        {% for article in articles %}
+                            <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                                <div class="blog-full text-center p-3">
+                                    <img src="/images/articles/{{ article.image }}" alt="{{ article.title }}"
+                                         width="500px">
+                                    <div class="blog-content pb-0">
+                                        <span class="h-date pink mb-1 font-weight-light d-block"> {{ article.createdAt|date("d M Y") }}</span>
+                                        <h3 class="mb-2"><a href="{{ path('article_detail', {"slug":article.slug}) }}"
+                                                            class="">{{ article.title }}</a></h3>
+                                        {% if article.postsCategory %}
+                                            <p class="date-cats mb-0 border-t pt-2 pb-2">
+                                                {% for categorie in article.postsCategory %}
+                                                    <a href="#" class="mr-2">{{ categorie.title }}</a>
+                                                {% endfor %}
+                                            </p>
+                                        {% endif %}
+                                        <p class="mb-2 border-t pt-2">{{ article.resume|striptags("&eacute;")|slice(0,150) }}...</p>
+                                        <a href="{{ path('article_detail', {"slug":article.slug}) }}"
+                                           class="grey font-weight-light">Lire La Suite <i
+                                                    class="fa fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    </div>
+                <div class="row">
+
+                    {# display navigation #}
+                    <div class="col-lg-4 col-md-12 "></div>
+                    <div class="col-lg-4 col-md-12 ">
+                            {{ knp_pagination_render(articles) }}
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-4"></div>
+
+                </div>
+            </div>
+            <!-- sidebar starts -->
+        </div>
+    </div>
+</section>
+{% else %}
+<div class="contact-info  text-center mt-5 mb-5">
+    <h3 class="">Aucune Article trouvé</h3>
+    <p class="mb-4">Nous n'avons pas d'articles avec ce critere </p>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="essejacques col-md-4">
+            <a href="{{ path('blog') }}" class="btn btn-block nrv-btn" style="background-color: #6f512f;color: white ">
+                Retouner sur la page Blog</a>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+
+</div>
+    {% endif %}
+    <!-- blog Ends -->
+    {% endblock %}

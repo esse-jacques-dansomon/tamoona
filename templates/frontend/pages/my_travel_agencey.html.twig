@@ -1,0 +1,220 @@
+{% extends 'frontend/base.html.twig' %}
+
+{% block body %}
+
+    {{ include('frontend/includes/bread_crumd.html.twig', {'page_name':'My Travel Agency'}) }}
+    <!-- form starts -->
+    <section class="about-us">
+        <div class="container">
+            <div class="about-image-box">
+                <div class="row d-flex align-items-center justify-content-between">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="about-content">
+                            <h4 class="mb-1 blue font-weight-normal">Your Travel Agency</h4>
+                            <h2>CHERS VOYAGEURS,</h2>
+                            <p class="mb-3">
+                                Vous êtes en quête d’expériences de voyage différentes et originales ? Tamoona est une
+                                agence de tourisme spécialisée dans l’organisation de séjours exclusifs destinés à une
+                                clientèle adepte de nouvelles sensations et découvertes.<br><br>
+                                Nous organisons votre séjour dans les moindres détails afin de vous faire gagner du
+                                temps et de réaliser vos rêves d’évasion. Nos clients ont de la valeur et leur
+                                destination est un trésor à planifier pour leur faire vivre des moments uniques en toute
+                                sérénité. Laissez juste parler votre imagination et nous nous chargerons de vous fournir
+                                une offre sur mesure adaptée à ce que vous recherchez.<br><br>
+                                Tamoona c’est plus qu’une offre préconçue, ce sont vos envies de découvertes et votre
+                                touche personnelle qui guident nos conseillères voyages dans le choix d’un séjour
+                                à votre image.<br><br>
+                                Nous mettons à votre disposition notre expertise en planification pour que vos voyages
+                                d’affaires se fassent sans tracas mais aussi pour vous faire vivre des moments
+                                inoubliables seul(e), en famille ou entre amis.<br>
+                                Confiez-nous vos idées de voyage et vous n’aurez plus qu’à profiter de votre séjour en toute relaxation !
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="about-image">
+                            <img src="{{ asset('/images/pages/about-img-video-1.jpg') }}" alt="">
+                        </div>
+                        <div class="about-imagelist mt-2">
+                            <ul class="d-flex justify-content-between">
+                                <li class="mr-2">
+                                    <img src="{{ asset('/images/articles/xl1632859094.jpg') }}"
+                                         alt="" width="400px" height="105px">
+                                </li>
+                                <li class="mr-2">
+                                    <img src="{{ asset('/images/articles/getty_583734066_335273-1536x8641632860001.jpg') }}" alt="" width="400px">
+                                </li>
+                                <li class="mr-2">
+                                    <img src="{{ asset('/images/articles/nanmc-view-0007-hor-wide1632859869.jpg') }}" alt="" width="400px">
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- form ends -->
+
+    <!-- News Starts -->
+    <section class="news pb-9 bg-lgrey ">
+        <div class="container">
+            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                <h2 class="m-0">Your <span>Travel</span> <span>Planners</span></h2>
+                <p class="mb-0 ">
+                    Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour par ce qu’il est au courant de toutes les tendances et est capable de prévoir les variations de prix. Billets d’avion, hébergement, location de voiture, activités, tout y passe, le Travel Planner vous livre un voyage clé en mains.
+                </p>
+            </div>
+            <div class="news-outer">
+                <div class="row item-slider">
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_4614-1.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a href="single-right.html" class="pr-3"><i class="fas fa-signature pink pr-1"></i> KHADIDIATOU NDIAYE  </a></li>
+                                        <li><a href="single-right.html" class=""><i class="fas fa-briefcase pink pr-1"></i> GÉRANTE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""> <strong class="pink">Destination préférée : </strong> Capetown, South Africa</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink"> Anecdote de voyage : </strong>« Je suis tombée en panne sur l’autoroute entre deux villes en Malaisie avec des amies, et on a dû être remorqué jusqu’à notre destination. Un moment inoubliable de rigolade et de karaoké. »
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_2226.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a class="pr-3"><i class="fas fa-signature pink pr-1"></i>AMINATA BA </a></li>
+                                        <li><a class=""><i class="fas fa-briefcase pink pr-1"></i> CONSEILLÈRE VOYAGE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""><strong class="pink"> Destination préférée: </strong> Male (Maldives)</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink">  Citation de voyage :  </strong>
+                                           Rester c’est exister, voyager c’est vivre.
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_2268.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a  class="pr-3"><i class="fas fa-signature pink pr-1"></i> VALÉRIE MENSAH  </a></li>
+                                        <li><a  class=""><i class="fas fa-briefcase pink pr-1"></i> COMPTABLE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""> <strong class="pink"> Destination préférée : </strong> Canada</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink"> Citation de voyage : </strong>« Le voyage est la plus saine des addictions. »
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_6127-scaled.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a  class="pr-3"><i class="fas fa-signature pink pr-1"></i> KHADY GUEYE -  </a></li>
+                                        <li><a  class=""><i class="fas fa-briefcase pink pr-1"></i> COMMERCIALE / SALES EXECUTIVE</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""> <strong class="pink"> Destination préférée : </strong> Dubaï</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink"> Citation de voyage : </strong> « Ku tukkiwul du xam fu dëkk neexe »
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_4559.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a  class="pr-3"><i class="fas fa-signature pink pr-1"></i> DANIELLE FAYE </a></li>
+                                        <li><a  class=""><i class="fas fa-briefcase pink pr-1"></i> ASSISTANTE ADMINISTRATION</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""> <strong class="pink"> Destination préférée : </strong> Lyon, France</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink"> Citation de voyage : </strong> « Si vous pensez que l’aventure est dangereuse, je vous propose d’essayer la routine…. Elle est mortelle ! »
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 col-xs-12 mb-4">
+                        <div class="news-item">
+                            <div class="news-image">
+                                <img src="{{ asset('images/pages/IMG_6776_Facetune_04-11-2020-14-58-31.jpg') }}" alt="image">
+                                <div class="color-overlay"></div>
+                            </div>
+                            <div class="news-content-over">
+                                <div class="news-list border-b pb-2 mb-2">
+                                    <ul>
+                                        <li><a  class="pr-3"><i class="fas fa-signature pink pr-1"></i>IDRISSA DIAOUNE </a></li>
+                                        <li><a  class=""><i class="fas fa-briefcase pink pr-1"></i> COURSIER</a></li>
+                                    </ul>
+                                </div>
+                                <div class="news-content mt-2">
+                                    <h5 class="bordernone"><a  class=""> <strong class="pink"> Destination préférée : </strong> Canada</a></h5>
+                                    <p class="bordernone"><a  class="">
+                                            <strong class="pink"> Citation de voyage : </strong>
+                                           « Le plus beau voyage, c’est celui qu’on n’a pas encore fait »
+                                        </a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- News Ends -->
+
+{% endblock %}
+

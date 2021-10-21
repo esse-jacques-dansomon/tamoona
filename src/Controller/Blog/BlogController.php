@@ -68,7 +68,7 @@ class BlogController extends AbstractController
             $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
         }
 
-        return $this->render('blog/blog.html.twig', [
+        return $this->render('frontend/blog/blog.html.twig', [
             'articles' => $articles,
             'tags' => $this->tags,
             'categories' => $this->categories,
@@ -90,7 +90,7 @@ class BlogController extends AbstractController
         {
             $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
 
-            return $this->render('blog/blog.html.twig', [
+            return $this->render('frontend/blog/blog.html.twig', [
                 'articles' => $articles,
                 'tags' => $this->tags,
                 'categories' => $this->categories,
@@ -117,7 +117,7 @@ class BlogController extends AbstractController
             $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
 
         }
-        return $this->render('blog/blog.html.twig', [
+        return $this->render('frontend/blog/blog.html.twig', [
             'articles' => $articles,
             'tags' => $this->tags,
             'categories' => $this->categories,
@@ -158,7 +158,7 @@ class BlogController extends AbstractController
             $this->flashy->error('Le formulaire remplie contient des erreurs');
         }
 
-        return $this->render('blog/article_detail.html.twig', [
+        return $this->render('frontend/blog/article_detail.html.twig', [
             'article' => $article,
             'tags' => $tags,
             'categories' => $categories,

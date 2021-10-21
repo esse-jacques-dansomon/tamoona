@@ -1,0 +1,458 @@
+{% extends 'frontend/base.html.twig' %}
+            {% block seo_head %}
+                {{ leogout_seo() }}
+            {% endblock %}
+{% block body %}
+
+    <!-- banner starts -->
+    {{ include('frontend/includes/slider.html.twig',  {'sliders':sliders}) }}
+    <!-- banner ends -->
+
+    <!-- form starts -->
+    <div class="form-main">
+        <div class="container">
+            <div class="form-content form-content1 w-100 transparent p-0 shadow-none position-relative">
+                <div class="form-navtab text-center">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tour" ><i class="flaticon-global" ></i> Villas</a></li>
+                        <li><a data-toggle="tab" href="#hotel" ><i class="flaticon-building mt-2"></i> Hotel</a></li>
+                        <li><a data-toggle="tab" href="#flight" ><i class="fa fa-plane mt-2"></i> Vol</a></li>
+                        <li><a data-toggle="tab" href="#car" ><i class="fa fa-car mt-2"></i> Voitures</a></li>
+                        <li><a data-toggle="tab" href="#train"><i class="fa fa-train mt-2"></i> Yach</a></li>
+                    </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="tour" class="tab-pane">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Votre Destination</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Vous voulez allez ou?</option>
+                                            <option value="2">Argentina</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Denmark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Check In</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range0" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Check Out</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range1" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>No. Of People</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-add-user"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0 mt-3">
+                                    <a href="#" class="nir-btn w-100"><i class="fa fa-search mr-2"></i> Rechercher</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hotel" class="tab-pane in active">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Votre Destination</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Vous voulez allez ou?</option>
+                                            <option value="2">Argentina</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Denmark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Reserved Date</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range2" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Types Hotel </label>
+                                    <div class="input-box">
+                                        <i class="flaticon-add-user"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">High Class</option>
+                                            <option value="2">Middle Class</option>
+                                            <option value="3">Low Class</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Person</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-add-user"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0 mt-3">
+                                    <a href="#" class="nir-btn w-100" style="background-color: black"><i class="fa fa-search mr-2"></i> Rechercher</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="flight" class="tab-pane">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Vol De</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Vous voulez allez ou?</option>
+                                            <option value="2">Argentina</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Denmark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Vol A</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Vous voulez allez ou?</option>
+                                            <option value="2">Argentina</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Denmark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Date de Depart</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range3" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>No de Personnes</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-add-user"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0 mt-3">
+                                    <a href="#" class="nir-btn w-100" style="background-color: black"><i class="fa fa-search mr-2"></i> Rechercher</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="car" class="tab-pane">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Types de Voitures</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Ferrari</option>
+                                            <option value="2">BMW</option>
+                                            <option value="3">Audi</option>
+                                            <option value="4">Honda</option>
+                                            <option value="5">Suzuki</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Pick Up</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range4" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Drop Off</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range5" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Price Range</label>
+                                    <div class="input-box">
+                                        <div class="range-slider">
+                                            <div data-min="0" data-max="2000" data-unit="$" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+                                                <span class="min-value">0 $</span>
+                                                <span class="max-value">2000 $</span>
+                                                <div class="ui-slider-range ui-widget-header ui-corner-all whole" style="left: 0%; width: 100%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0 mt-3">
+                                    <a href="#" class="nir-btn w-100" style="background-color: black"><i class="fa fa-search mr-2"></i> Rechercher</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="train" class="tab-pane">
+                        <div class="row d-flex align-items-center justify-content-between">
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Choissez une Location</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-placeholder"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Vous voulez allez ou?</option>
+                                            <option value="2">Argentina</option>
+                                            <option value="3">Belgium</option>
+                                            <option value="4">Canada</option>
+                                            <option value="5">Denmark</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Depart Date</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-calendar"></i>
+                                        <input id="date-range6" type="text" placeholder="yyyy-mm-dd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0">
+                                    <label>Types de Yach</label>
+                                    <div class="input-box">
+                                        <i class="flaticon-add-user"></i>
+                                        <select class="niceSelect">
+                                            <option value="1">Economic</option>
+                                            <option value="2">Premium</option>
+                                            <option value="3">Deluxe</option>
+                                            <option value="4">Luxury</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-group mb-0 mt-3">
+                                    <a href="#" class="nir-btn w-100" style="background-color: black"><i class="fa fa-search mr-2"></i> Rechercher</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form ends -->
+
+    <!-- why us starts -->
+    <section class="why-us pb-0">
+        <div class="container">
+            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                <h4 class="mb-0 pink">Tamoona Travel</h4>
+                <h2 class="">FAÎTES CONFIANCE <span> À NOTRE EXPERTIS</span></h2>
+            </div>
+            <div class="why-us-box">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="why-us-item text-center">
+                            <div class="why-us-icon mb-2">
+                                <i class="flaticon-airplane-travelling-around-earth pink"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h4><a href="#">NOUS SOMMES LÀ POUR VOUS</a></h4>
+                                <p class="mb-0">Tamoona vous conseille pour vous fournir une prestation à hauteur de vos
+                                    attentes. Tamoona met sa créativité à votre service pour des séjours sur mesure,
+                                    vous aide aussi à choisir votre destination pour vos vacances ou vos séjours
+                                    d’affaires. Votre carnet de voyage personnalisé, un guide de séjour à votre
+                                    disposition, ne manquez rien de vos expériences. Tamoona est spécialisé
+                                    dans la vente de billets d’avion vers toutes les destinations, réservation
+                                    d’hôtel, assurances, réceptif, team building, assistance visa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="why-us-item text-center">
+                            <div class="why-us-icon mb-2">
+                                <i class="flaticon-quality pink"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h4><a href="#">NOUS VOUS ÉCOUTONS</a></h4>
+                                <p class="mb-0">
+                                    Nous sommes à l’écoute de vos envies pour organiser votre séjour du début à la fin,
+                                    avec un suivi avant, pendant et après votre voyage. Tamoona est spécialisé dans la
+                                    vente de billets d’avion vers toutes les destinations, réservation d’hôtel,
+                                    assurances, réceptif, team building, assistance visa
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="why-us-item text-center">
+                            <div class="why-us-icon mb-2">
+                                <i class="flaticon-call pink"></i>
+                            </div>
+                            <div class="why-us-content">
+                                <h4><a href="#">A VOTRE SERVICE 24H/24</a></h4>
+                                <p class="mb-0">Notre équipe est disponible 24/24 et 7j/7 pour répondre à toutes les
+                                    questions relatives à votre séjour.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why us ends -->
+
+    <!-- about-us starts -->
+    <section class="about-us pb-5 " style="background-image: url(/images/pages/about2-min.jpg)" >
+        <div class="container">
+            <div class="about-image-box">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="about-content">
+                            <h4 class="mb-1 white font-weight-normal">Tamoona, Your Travel Planner </h4>
+                            <h2 class="white">NOUS VOUS FERONS VIVRE DES VOYAGES INOUBLIABLES!</h2>
+                            <p class="mb-2 white">
+                                Pour voyager, il faut rechercher, se renseigner, tracer son itinéraire, définir un
+                                planning, comparer les prix des billets d’avion, des hébergements, des activités à
+                                faire sur place. Il faut du temps pour faire tout cela et vous n’en avez pas toujours
+
+                                <br><br>
+                                Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour
+                                par ce qu’il est au courant de toutes les tendances et est capable de prévoir les
+                                variations de prix. Billets d’avion, hébergement, location de voiture, activités,
+                                tout y passe, le Travel Planner vous livre un voyage clé en mains.
+                            </p>
+                            <div class="about-featured mb-0">
+                                <ul>
+                                    <li class="white">Le couple fan de gastronomie</li>
+                                    <li class="white">La famille d’aventurier</li>
+                                    <li class="white">Le cadre sportif de l’extrême</li>
+                                    <li class="white">Le business man en mode détente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                                <div class="about-image-desti mt-5">
+                                    <img src="{{ asset('/images/pages/about1-min.jpg') }}" alt="">
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <!-- about-us ends -->
+
+    <!-- News Starts -->
+    {{ include('frontend/includes/news_articles.html.twig', {'articles':articles}) }}
+    <!-- News Ends -->
+
+
+    <!-- Newsletter Starts -->
+    <section class="newsletter-area m-0 pb-2 pt-3" style="background-color: #6F512F!important;">
+        <div class="container">
+            <div class="newsletter-main">
+                <div class="newsletter-wrapper">
+                    <div class="row d-flex align-items-center justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="newsletter-content-wrapper d-sm-flex align-items-center">
+                                <div class="newsletter-icon">
+                                    <i class="fa fa-envelope-open white"></i>
+                                </div>
+                                <div class="newsletter-content ml-4">
+                                    <p class="m-0 white">INSCRIVEZ-VOUS À NOTRE NEWSLETTER</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="newsletter-form">
+                                {{ form_start(form) }}
+                                    {{ form_row(form.email) }}
+                                    <button class="nir-btn" style="background-color: black!important;">S'inscrire</button>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Ends -->
+
+
+{% endblock %}

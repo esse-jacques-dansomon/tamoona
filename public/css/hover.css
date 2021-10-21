@@ -10,18 +10,19 @@ a:hover::after {
 
 footer .footer-upper .footer-links ul li a:hover{
     color:#c8ad7f !important;
+    background-color:black !important;
 
 }
 
 .form-main .form-content .form-navtab .nav-tabs li.active a {
-    background: #212529!important;
+    background: black!important;
     color: #fff;
     border: none;
     transition: all 0.5s;
 }
 
 .form-main .form-content .form-navtab .nav-tabs li a:hover{
-    background: #b3aeae;
+    background: black;
     color: black!important;
 }
 
@@ -41,3 +42,49 @@ footer .footer-upper .footer-links ul li a:hover{
 .swiper-container-android .swiper-slide, .swiper-wrapper {
     /*transform: translate3d(0,0,0); */
 }
+.fa .fa-map-marker{
+    background-color: black;
+}
+
+.contact-main .contact-info .info-item .info-icon i{
+    background-color: black!important;
+
+}
+
+.why-us .why-us-item::after{
+    background-color: black!important;
+    content: '';
+    background: black!important;
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+    position: absolute;
+}
+footer {
+    width: 100%;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].btn-block{
+    background-color:black;
+}
+.form-main .form-content .form-navtab .nav-tabs li a:hover {
+    color:white!important;
+}
+
+.dot-overlay {
+    background: black !important;
+    opacity: .6;
+}
+
+.main_header_area.headerstye-1 .header_menu .navbar.navbar-default .nav.navbar-nav li a {
+    color: #fff;
+}
+

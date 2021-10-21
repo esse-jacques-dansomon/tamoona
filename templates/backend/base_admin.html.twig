@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="FR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/Tamoona-carré.png') }}"/>
+
+    {% block stylesheets %}
+        {{ include("backend/includes/css.html.twig") }}
+        <link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+    {% endblock %}
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+    {{ include('backend/header_footer/header.html.twig') }}
+
+    {{ include('backend/sidebar/sibebar.html.twig') }}
+
+
+    {% block body %}
+
+
+    {% endblock %}
+
+
+    {{ include('backend/header_footer/footer.html.twig') }}
+
+    {% block javascripts %}
+
+        <!-- Flashy depends on jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+        {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+
+        {% include("backend/includes/js.html.twig") %}
+    {% endblock %}
+    </div>
+
+</body>
+
+</html>
