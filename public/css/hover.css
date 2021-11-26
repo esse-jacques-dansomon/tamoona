@@ -30,9 +30,10 @@ footer .footer-upper .footer-links ul li a:hover{
   background-color: #c8ad7f !important;
 }
 
-.breadcrumb li a {
-    color:black;
+.breadcrumb-main {
+    background-color: #d97707;
 }
+
 
 .dot-overlay {
     background: #a9843785 !important;
@@ -88,3 +89,10 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     color: #fff;
 }
 
+.breadcrumb li a {
+    color:white!important ;
+}
+
+.breadcrumb .breadcrumb-item li a {
+    color: white;
+}

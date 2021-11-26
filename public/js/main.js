@@ -338,27 +338,7 @@
     });
 
 
-    $("#contactform").validate({
-        submitHandler: function() {
 
-            $.ajax({
-                url : 'mail/contact.php',
-                type : 'POST',
-                data : {
-                    fname : $('input[name="first_name"]').val(),
-                    lname : $('input[name="last_name"]').val(),
-                    email : $('input[name="email"]').val(),
-                    phone : $('input[name="phone"]').val(),
-                    comments : $('textarea[name="comments"]').val(),
-                },
-                success : function( result ){
-                    $('#contactform-error-msg').html( result );
-                    $("#contactform")[0].reset();
-                }
-            });
-
-        }
-    });
 
     // burgermenu
 
@@ -477,11 +457,7 @@
             $(this).removeClass('open');
         }
     });
-    //Do not include! This prevents the form from submitting for DEMO purposes only!
-    $('form').submit(function(event) {
-        event.preventDefault();
-        return false;
-    });
+
 
 })(jQuery);
 

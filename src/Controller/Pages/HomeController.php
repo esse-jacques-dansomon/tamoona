@@ -7,6 +7,7 @@ use App\Entity\Newsletter;
 use App\Form\ContactType;
 use App\Form\NewsletterType;
 use App\Repository\ArticleRepository;
+use App\Repository\OfferRepository;
 use App\Repository\SliderRepository;
 use App\service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
@@ -34,14 +35,16 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/", name="home", methods={"get|post"})
+     * @param OfferRepository $offerrRepository
      * @param SliderRepository $sliderRepository
      * @param ArticleRepository $articleRepository
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function index(SliderRepository $sliderRepository, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $manager): Response
+    public function index(OfferRepository $offerrRepository,SliderRepository $sliderRepository, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $manager): Response
     {
+        $offers = $offerrRepository->findByIsDisplayed(true);
         $sliders = $sliderRepository->findByIsDisplayed(true);
         $articles = $articleRepository->findBy([], array("id"=>'DESC'), 3);
         $newsletter = new Newsletter();
@@ -61,7 +64,8 @@ class HomeController extends AbstractController
             $this->flashy->error('Vérifier votre email, c\'est incorrect !');
         }
 
-        return $this->render('frontend/pages/home.html.twig' ,["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView()]);
+        return $this->render('frontend/pages/home.html.twig' ,
+            ["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView(), "offers"=>$offers]);
     }
 
     /**
@@ -90,8 +94,8 @@ class HomeController extends AbstractController
             $manager->persist($contact);
             $manager->flush();
             //envoie de mail
-            $mail = $mailerService->sendEmail($contact);
-            $mailer->send($mail);
+            //$mail = $mailerService->sendEmail($contact);
+           // $mailer->send($mail);
 
             $contact = new Contact();
             $form = $this->createForm(ContactType::class, $contact);
@@ -106,11 +110,5 @@ class HomeController extends AbstractController
             ['form'=>$form->createView()]) ;
     }
 
-    /**
-     * @Route("/lite")
-    */
-    public  function admin()
-    {
-        return $this->render('backend/pages/dashbord.html.twig');
-    }
+
 }

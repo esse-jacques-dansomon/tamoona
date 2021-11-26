@@ -18,7 +18,6 @@ class CommentType extends AbstractType
         $builder
             ->add('userName', TextType::class,
                 ['label' => 'Votre Nom',
-
                     'attr'=>['class'=>'form-control','placeholder' => 'Votre Nom',
 
                     ]
@@ -32,11 +31,9 @@ class CommentType extends AbstractType
             ->add('content', TextareaType::class,
                 [
                     'label' => 'Votre Commentaire',
-
                     'attr'=>['class'=>'form-control',
                         'placeholder' => 'Votre Commentaire',
                         "rows"=>"4"
-
                     ]
                 ])
         ;

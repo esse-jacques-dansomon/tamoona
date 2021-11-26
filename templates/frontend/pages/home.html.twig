@@ -14,7 +14,7 @@
             <div class="form-content form-content1 w-100 transparent p-0 shadow-none position-relative">
                 <div class="form-navtab text-center">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#tour" ><i class="flaticon-global" ></i> Villas</a></li>
+                        <li class="active"><a data-toggle="tab" href="#tour" ><i class="flaticon-global" ></i> Packages</a></li>
                         <li><a data-toggle="tab" href="#hotel" ><i class="flaticon-building mt-2"></i> Hotel</a></li>
                         <li><a data-toggle="tab" href="#flight" ><i class="fa fa-plane mt-2"></i> Vol</a></li>
                         <li><a data-toggle="tab" href="#car" ><i class="fa fa-car mt-2"></i> Voitures</a></li>
@@ -314,6 +314,8 @@
     </div>
     <!-- form ends -->
 
+
+
     <!-- why us starts -->
     <section class="why-us pb-0">
         <div class="container">
@@ -376,6 +378,10 @@
     </section>
     <!-- why us ends -->
 
+    <!-- carossel-->
+    {{ include('frontend/includes/offre.html.twig',  {'offers':offers}) }}
+    <!-- fin carrrossel-->
+
     <!-- about-us starts -->
     <section class="about-us pb-5 " style="background-image: url(/images/pages/about2-min.jpg)" >
         <div class="container">
@@ -423,8 +429,9 @@
     <!-- News Ends -->
 
 
+
     <!-- Newsletter Starts -->
-    <section class="newsletter-area m-0 pb-2 pt-3" style="background-color: #6F512F!important;">
+    <section class="newsletter-area m-0 pb-2 pt-3" style="background-color: black!important;">
         <div class="container">
             <div class="newsletter-main">
                 <div class="newsletter-wrapper">
@@ -443,7 +450,7 @@
                             <div class="newsletter-form">
                                 {{ form_start(form) }}
                                     {{ form_row(form.email) }}
-                                    <button class="nir-btn" style="background-color: black!important;">S'inscrire</button>
+                                    <button class="nir-btn" style="background-color: #c8ad7f!important;">S'inscrire</button>
                                 {{ form_end(form) }}
                             </div>
                         </div>

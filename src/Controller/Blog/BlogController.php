@@ -55,7 +55,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog", name="blog")
+     * @Route("/blog", name="blog",  methods={"GET")
      * @param PaginatorInterface $paginator
      * @param Request $request
      * @return Response
@@ -102,7 +102,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/tag/{slug}", name="blog_tag")
+     * @Route("/blog/tag/{slug}", name="blog_tag",  methods={"GET")
      * @param Tags|null $tag
      * @param PaginatorInterface $paginator
      * @param Request $request
@@ -126,7 +126,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/article/{slug}", name="article_detail")
+     * @Route("/blog/article/{slug}", name="article_detail",  methods={"GET|POST")
      * @param Article|null $article
      * @param Request $request
      * @return Response

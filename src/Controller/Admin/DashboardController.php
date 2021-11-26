@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Article;
+use App\Entity\Booking;
 use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Contact;
 use App\Entity\Newsletter;
+use App\Entity\Offer;
 use App\Entity\Role;
 use App\Entity\Slider;
 use App\Entity\Tags;
@@ -47,8 +49,9 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::linkToCrud('Role', 'fas fa-chess', Role::class);
             yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user-circle', User::class);
         }
-
-
+        yield MenuItem::section('Gestion des Offres');
+        yield MenuItem::linkToCrud('Offres', 'fab fa-buffer', Offer::class);
+        yield MenuItem::linkToCrud('Booking', 'fas fa-suitcase-rolling', Booking::class);
 
         yield MenuItem::section('Gestion Blog');
         yield MenuItem::linkToCrud('Articles', 'far fa-newspaper', Article::class);
