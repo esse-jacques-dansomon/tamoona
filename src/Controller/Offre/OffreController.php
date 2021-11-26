@@ -74,12 +74,12 @@ class OffreController extends AbstractController
             {
                 $booking->setOffre($offer);
                 $manager->persist($booking);
-                    $manager->flush();
+                $manager->flush();
                     //envoie de mail
                     //$mail = $mailerService->sendEmail($contact);
                     //$mailer->send($mail);
                     $booking = new Booking();
-                    $bookingForm = $this->createForm(Booking::class,$booking );
+                    $bookingForm = $this->createForm(BookingType::class,$booking );
                     //add flasy
                     $this->flashy->success('Votre reservation a ete bien envoyée');
             }
