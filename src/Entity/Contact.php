@@ -38,8 +38,7 @@ class Contact
      *      min = 12,
      *      max = 16,
      *      minMessage = "Votre numero de téléphone doit etre au moins  {{ limit }} characteres" ,
-     *      maxMessage = "Votre numero de téléphone doit etre au plus  {{ limit }} characteres"
-     * )
+     *      maxMessage = "Votre numero de téléphone doit etre au plus  {{ limit }} characteres")
      */
     private ?string $phone;
 

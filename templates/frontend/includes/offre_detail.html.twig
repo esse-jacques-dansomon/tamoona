@@ -71,9 +71,9 @@
 
                         {% for key, accordeon in accordions  %}
                             {% set element = accordeon |split('*') %}
-                        <div class="accrodion {% if key == 0 %} active {% endif%} ">
-                            <div class="accrodion-title">
-                                <h5 class="mb-0"><span>{{ element[0] }}</span>  </h5>
+                        <div class="accrodion {% if key == 0 %} active {% endif%} " >
+                            <div class="accrodion-title" style=" background-color: #94703C">
+                                <h5 class="mb-0"><span >{{ element[0] }}</span>  </h5>
                             </div>
                             <div class="accrodion-content" style="display: block;">
                                 <div class="inner">
@@ -91,7 +91,7 @@
                 <div class="sidebar-sticky">
                     <div class="list-sidebar">
                         <div class="sidebar-item">
-                            <div class="form-content">
+                            <div class="form-content" style="background-color: #94703C">
                                 <h4 class="title white text-center">FAIRE UNE RESERVATION</h4>
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -125,7 +125,7 @@
 
                         </div>
 
-                        <div class="sidebar-item">
+                        <div class="sidebar-item" >
                             <div class="location-rating mb-2 mt-2">
                                 <div class="row d-flex align-items-center">
                                     <div class="col-lg-2 col-md-2">
@@ -146,8 +146,8 @@
                             </div>
                         </div>
 
-                        <div class="sidebar-item">
-                            <div class="sidebar-contact text-center bg-navy">
+                        <div class="sidebar-item" style="background-color: #94703C!important;">
+                            <div class="sidebar-contact text-center "  >
                                 <i class=" fa fa-phone-alt white"></i>
                                 <h3 class="white"><span>Contacter</span>  Nous</h3>
                                 <a href="tel://+221 77 944 26 26" class="phone white">+221 77 944 26 26</a>
@@ -162,158 +162,53 @@
 </section>
 <!-- blog Ends -->
 
+    {% if offres is defined and offres != []  %}
 <!-- Trending Starts -->
 <section class="trending destination bg-grey pb-6">
     <div class="container">
         <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
-            <h2 class="m-0">Related <span>Tour Packages</span></h2>
-            <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>
+            <h2 class="m-0">Offres <span style="color: #94703C">Similaires</span></h2>
+            <p class="mb-0">Découvrer tous nos meilleurs offres</p>
         </div>
         <div class="trend-box">
             <div class="row team-slider">
-                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+                {% for offreSimilaire in offres %}
+                    {% if offreSimilaire.id != offre.id %}
+                    <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
                     <div class="trend-item">
                         <div class="trend-image">
-                            <img src="images/trending/trending1.jpg" alt="image">
+                            <img src="/images/offers/{{ offreSimilaire.image }}" alt="image">
                             <div class="trend-tags">
-                                <a href="#"><i class="flaticon-like"></i></a>
+                                <a href="{{ path('offre_detail', { slug : offreSimilaire.slug }) }}"><i class="flaticon-like"></i></a>
                             </div>
                         </div>
                         <div class="trend-content-main">
                             <div class="trend-content">
-                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Thailand</h6>
-                                <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
-                                <div class="rating-main d-flex align-items-center">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2">38 Reviews</span>
-                                </div>
+                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> {{ offreSimilaire.destination }} </h6>
+                                <h4 style="color: black"><a href="{{ path('offre_detail', { slug : offreSimilaire.slug }) }}">
+                                        {{ offreSimilaire.title }}
+                                    </a></h4>
                             </div>
                             <div class="trend-last-main">
-                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                <div class="trend-last d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
+                                <p class="mb-0 trend-para">{{ offreSimilaire.description }}</p>
+                                <div class="trend-last d-flex align-items-center justify-content-between " style="background-color: #94703C">
+                                    <p class="mb-0 white" ><i class="fa fa-info-o" aria-hidden="true"></i>
+                                        <a href="{{ path('offre_detail', { slug : offreSimilaire.slug }) }}" class="white">En Savoir Plus</a>
+                                    </p>
                                     <div class="trend-price">
-                                        <p class="price white mb-0">From <span>$350.00</span></p>
+                                        <p class="price white mb-0">fcfa <span class="font-weight-light">{{ offreSimilaire.price }}</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="images/trending/trending2.jpg" alt="image">
-                            <div class="trend-tags">
-                                <a href="#"><i class="flaticon-like"></i></a>
-                            </div>
-                        </div>
-                        <div class="trend-content-main">
-                            <div class="trend-content">
-                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Germany</h6>
-                                <h4><a href="#">Bosphorus and Black Sea Cruise from Istanbul</a></h4>
-                                <div class="rating-main d-flex align-items-center">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2">38 Reviews</span>
-                                </div>
-                            </div>
-                            <div class="trend-last-main">
-                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                <div class="trend-last d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                    <div class="trend-price">
-                                        <p class="price white mb-0">From <span>$350.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="images/trending/trending3.jpg" alt="image">
-                            <div class="trend-tags">
-                                <a href="#"><i class="flaticon-like"></i></a>
-                            </div>
-                        </div>
-                        <div class="trend-content-main">
-                            <div class="trend-content">
-                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Denmark</h6>
-                                <h4><a href="#">NYC One World Observatory Skip-the-Line Ticket</a></h4>
-                                <div class="rating-main d-flex align-items-center">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2">38 Reviews</span>
-                                </div>
-                            </div>
-                            <div class="trend-last-main">
-                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                <div class="trend-last d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                    <div class="trend-price">
-                                        <p class="price white mb-0">From <span>$350.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
-                    <div class="trend-item">
-                        <div class="trend-image">
-                            <img src="images/trending/trending4.jpg" alt="image">
-                            <div class="trend-tags">
-                                <a href="#"><i class="flaticon-like"></i></a>
-                            </div>
-                        </div>
-                        <div class="trend-content-main">
-                            <div class="trend-content">
-                                <h6 class="font-weight-normal"><i class="fa fa-map-marker-alt"></i> Japan</h6>
-                                <h4><a href="#">Stonehenge, Windsor Castle, and Bath from London</a></h4>
-                                <div class="rating-main d-flex align-items-center">
-                                    <div class="rating">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                    </div>
-                                    <span class="ml-2">38 Reviews</span>
-                                </div>
-                            </div>
-                            <div class="trend-last-main">
-                                <p class="mb-0 trend-para">A wonderful little cottage right on the seashore - perfect for exploring.</p>
-                                <div class="trend-last d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 white"><i class="fa fa-clock-o" aria-hidden="true"></i> 3 days & 2 night</p>
-                                    <div class="trend-price">
-                                        <p class="price white mb-0">From <span>$350.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
 </section>
 <!-- Trending Ends -->
+    {% endif %}
 {% endblock %}

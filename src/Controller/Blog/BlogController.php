@@ -40,9 +40,7 @@ class BlogController extends AbstractController
      * @param FlashyNotifier $flashy
      * @param PaginationService $paginationService
      */
-    public function __construct(ArticleRepository $articleRepoe, TagsRepository $tagRepo,
-                                CategoryRepository $categorRepoe, FlashyNotifier $flashy,
-                                PaginationService  $paginationService)
+    public function __construct(ArticleRepository $articleRepoe, CategoryRepository $categorRepoe, TagsRepository $tagRepo, FlashyNotifier $flashy, PaginationService  $paginationService)
     {
         $this->articleRepository  =  $articleRepoe;
         $this->tagsRepository  =  $tagRepo;
@@ -55,7 +53,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog", name="blog",  methods={"GET")
+     * @Route("/blog", name="blog",  methods={"GET"})
      * @param PaginatorInterface $paginator
      * @param Request $request
      * @return Response
@@ -102,7 +100,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/tag/{slug}", name="blog_tag",  methods={"GET")
+     * @Route("/blog/tag/{slug}", name="blog_tag",  methods={"GET"})
      * @param Tags|null $tag
      * @param PaginatorInterface $paginator
      * @param Request $request
@@ -126,7 +124,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/article/{slug}", name="article_detail",  methods={"GET|POST")
+     * @Route("/blog/article/{slug}", name="article_detail",  methods={"GET|POST"})
      * @param Article|null $article
      * @param Request $request
      * @return Response
