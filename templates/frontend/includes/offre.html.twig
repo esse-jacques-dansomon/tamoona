@@ -15,7 +15,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="trend-item">
 
-                        <div class="ribbon ribbon-top-left"><span>fcfa {{ offer.price }}</span></div>
+                        <div class="ribbon ribbon-top-left" ><span style="background-color: #856404!important;">FCFA {{ offer.price|number_format(0, '.', ',')  }}</span></div>
                         <div class="trend-image">
                             <img src="/images/offers/{{ offer.image }}" alt="image">
                             <div class="trend-tags">

@@ -6,12 +6,13 @@
 /config/secrets/prod/prod.decrypt.private.php
 /var/
 /vendor/
-/public/dist/*
-/pulic/plugins/*
-/templates/backend/*
-/templates/user_admin/*
-/src/Controller/AdminLite/*
+/public/bundles/**
+/public/bundles/
 
+###> symfony/framework-bundle ###
+###< symfony/framework-bundle ###
+
+.env
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
