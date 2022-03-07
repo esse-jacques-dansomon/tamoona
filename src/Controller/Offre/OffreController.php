@@ -34,7 +34,7 @@ class OffreController extends AbstractController
     public function index(OfferRepository $offerRepository)
     {
 
-        $offers = $offerRepository->findByCategory("autres");
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'autres']);
         return $this->render('frontend/pages/offres.html.twig', [
             "offers"=>$offers
         ]);
@@ -48,7 +48,7 @@ class OffreController extends AbstractController
     public  function admin(OfferRepository $offerRepository)
     {
 
-        $offers = $offerRepository->findByCategory("senegal");
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'senegal']);
         return $this->render('frontend/pages/decouverte_senegal.html.twig', [
             "offers"=>$offers
         ]);
@@ -64,10 +64,10 @@ class OffreController extends AbstractController
      */
     public function detailOffre(Offer $offer, Request $request, EntityManagerInterface $manager, OfferRepository $offerRepository): Response
     {
-        if($offer)
+        if($offer and $offer->getIsDisplayed() == true)
         {
             $booking = new Booking();
-            $offers = $offerRepository->findBy([],['id'=>'DESC'],3);
+            $offers = $offerRepository->findBy(['isDisplayed'=> true ],['id'=>'DESC'],3);
             $bookingForm = $this->createForm(BookingType::class,$booking );
             $bookingForm->handleRequest($request);
             if($bookingForm->isSubmitted() && $bookingForm->isValid())

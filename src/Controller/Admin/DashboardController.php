@@ -46,7 +46,6 @@ class DashboardController extends AbstractDashboardController
         if($this->isGranted("ROLE_ADMINISTRATOR"))
         {
             yield MenuItem::section('Gerer les Users');
-            yield MenuItem::linkToCrud('Role', 'fas fa-chess', Role::class);
             yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user-circle', User::class);
         }
         yield MenuItem::section('Gestion des Offres');

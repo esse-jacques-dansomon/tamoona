@@ -49,7 +49,7 @@ class OfferCrudController extends AbstractCrudController
             NumberField::new('price', 'Prix'),
             NumberField::new('nombreDeJour', 'Durée'),
             NumberField::new('nombreMaxPersonne', 'Nombre Maximum de personnes')->hideOnIndex(),
-            ChoiceField::new('category', 'Categorie')->setChoices(["Sénegal"=>"Sénegal","Autres" => "Autres"])->hideOnIndex(),
+            ChoiceField::new('category', 'Categorie')->setChoices(["Sénegal"=>"Sénegal","Autres" => "Autres"]),
             DateTimeField::new('delaiAt', 'Date'),
             TextField::new('badgeTexte', 'Texte De Badge')->hideOnIndex(),
             TextareaField::new('services', 'Services Proposés')->hideOnIndex(),
