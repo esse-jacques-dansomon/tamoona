@@ -8,7 +8,8 @@
 /vendor/
 /public/bundles/**
 /public/bundles/
-
+/public/favicon.gif
+/public/favicon.ico
 ###> symfony/framework-bundle ###
 ###< symfony/framework-bundle ###
 
