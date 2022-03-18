@@ -39,6 +39,16 @@
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                                <h2 class="m-0">Oops <span>Aucune offre</span></h2>
+                                <p class="mb-0">Nous ne disposons pas encore d'offres pour l'instant </p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <a href="{{ path('contact') }}" class="nir-btn">Nous Contacter <i class="fa fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
                         {% endfor %}
 
                         {#

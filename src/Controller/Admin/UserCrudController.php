@@ -35,7 +35,13 @@ class UserCrudController extends AbstractCrudController
         return $actions
             // ...
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_ADD_ANOTHER)
+                        ->remove(Crud::PAGE_INDEX, Action::NEW)
+                        ->remove(Crud::PAGE_INDEX, Action::EDIT)
+                        ->remove(Crud::PAGE_INDEX, Action::DELETE)
+                        ->remove(Crud::PAGE_INDEX, Action::DETAIL)
+
+                        ->remove(Crud::PAGE_DETAIL, Action::EDIT)
+                        ->remove(Crud::PAGE_DETAIL, Action::DELETE)
             ;
     }
     public function configureFields(string $pageName): iterable

@@ -24,7 +24,8 @@ class BookingCrudController extends AbstractCrudController
     {
         return $actions
             // ...
-            ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            ->remove(Crud::PAGE_INDEX, Action::EDIT)
+
             ;
     }
 

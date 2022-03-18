@@ -84,7 +84,7 @@ class OffreController extends AbstractController
                     $this->flashy->success('Votre reservation a ete bien envoyée');
             }
             if($bookingForm->isSubmitted() && !$bookingForm->isValid())
-                $this->flashy->error('Le formulaire rempli contient des ereurs, veuillez les corriger svp ');
+                $this->flashy->error('Le formulaire rempli contient des erreurs, veuillez les corriger svp ');
             return $this->render('/frontend/includes/offre_detail.html.twig',
                 [
                     "offre" =>$offer,
