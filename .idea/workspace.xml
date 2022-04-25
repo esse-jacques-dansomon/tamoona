@@ -6,21 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b13ca9c3-5a27-47c7-a6b2-93038098557f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony_tamoona.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony_tamoona.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/PaginationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/PaginationService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +226,7 @@
       <workItem from="1648414550449" duration="1785000" />
       <workItem from="1650309853611" duration="41000" />
       <workItem from="1650334989828" duration="1073000" />
-      <workItem from="1650902895293" duration="5766000" />
+      <workItem from="1650902895293" duration="6487000" />
     </task>
     <servers />
   </component>
