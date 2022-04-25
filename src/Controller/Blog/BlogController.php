@@ -65,7 +65,6 @@ class BlogController extends AbstractController
         {
             $articles = $this->paginationService->verifyArticles( $articles,  $paginator,  $request);
         }
-
         return $this->render('frontend/blog/blog.html.twig', [
             'articles' => $articles,
             'tags' => $this->tags,
