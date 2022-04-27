@@ -4,14 +4,14 @@
 # See https://github.com/leogout/SeoBundle#setting-values-dynamically to use them directly in your controller.
 leogout_seo:
     general:
-        title: Tamoona your travel planner agencey
+        title: Tamoona the travel planner agency
         description: Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour par ce qu’il est au courant de toutes les tendances.
-        image: http://images.com/poneys/12/large
+        image: https://tamoonatravel.com/
     basic:
-        title: Tammonna your travel planner agencey
+        title: Tamoona your travel planner agency
         description: Un Travel Planner vous conseille sur les meilleurs moments pour planifier votre séjour par ce qu’il est au courant de toutes les tendances.
-        keywords: Tamoona,tamoona, Travel, Senegal voyage,
-        canonical: http://test.com
+        keywords: Tamoona, Travel, Sénégal voyage, Agence de voyage, Planner
+        canonical: https://tamoonatravel.com/
         robots:
             index: true
             follow: false
@@ -20,7 +20,7 @@ leogout_seo:
         description: Agence de voyage certifié IATA, un biellet d'avion ne suffit pas...Nous sommes à votre disposition pour planifier tout votre voyage avec nous
         image: /images/Tamoona-carré.png
         type: website # article, book, profile
-        url: http://test.com/articles
+        url: https://tamoonatravel.com/
     twitter:
         title: Tamoona
         description: Agence de voyage certifié IATA, un biellet d'avion ne suffit pas...Nous sommes à votre disposition pour planifier tout votre voyage avec nous
