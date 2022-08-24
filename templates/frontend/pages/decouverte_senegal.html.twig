@@ -4,11 +4,36 @@
             {% endblock %}
 {% block body %}
 <!-- BreadCrumd starts -->
-{{ include('/frontend/includes/bread_crumd.html.twig', {'page_name':'Decouverte Sénégal'}) }}
+{{ include('/frontend/includes/bread_crumd.html.twig', {'page_name':'Découverte Sénégal'}) }}
+<!-- BreadCrumd starts -->
+<!-- News Starts -->
+<section class="news  bg-lgrey ">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2 w-75 mx-auto">
+            {#                <h2 class="m-0">Vos <span>Conseils</span> <span>de voyages</span></h2>#}
+            <p class="mb-0 ">
+                Véritable kaléidoscope de paysages luxuriants et de vastes étendues parsemées de baobabs centenaires, le Sénégal présente une infinité de milieux naturels. Situé entre le Sahel au nord et la grande forêt tropicale, il est traversé par quatre fleuves qui prennent naissance dans le massif du Fouta Djalon, en Guinée : le fleuve Sénégal qui a donné son nom au pays, la Gambie, le Saloum et la Casamance.
+            </p>
+            <br>
+            <p class="mb-0">
+                Accueillant, chaleureux et hospitalier, c’est un carrefour d’ethnies et de traditions, terre des Wolofs, des Pulaar (pasteurs Peulhs et Toucouleurs de la vallée du fleuve Sénégal), des Soninkés, des Diolas de la Casamance, des Sérères du sine et des Mandingues, contribuant tous à la richesse culturelle du pays.
+            </p>
+            <br>
+
+            <p class="mb-0">
+                Le Sénégal ne manque pas d’atouts. Destination balnéaire la plus proche de l’Europe, il dispose d’un soleil qui brille quasiment toute l’année, de sites naturels d’une grande beauté, de parc et de réserves, d’une grande richesse en faune et flore, de 700 km de plages de sable fin du nord au sud et surtout de l’accueil chaleureux de sa population.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- News Ends -->
+<!-- BreadCrumd starts -->
+{{ include('/frontend/includes/offre_grid.html.twig', {'offers':offers}) }}
 <!-- BreadCrumd starts -->
 
-<!-- BreadCrumd starts -->
-    {{ include('/frontend/includes/offre_grid.html.twig', {'offers':offers}) }}
-<!-- BreadCrumd starts -->
 
+<!-- form -->
+    {{ include('frontend/includes/form_on_all_page.html.twig') }}
+<!-- form -->
 {% endblock %}

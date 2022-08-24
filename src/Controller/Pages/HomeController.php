@@ -3,10 +3,12 @@
 namespace App\Controller\Pages;
 
 use App\Entity\Contact;
+use App\Entity\FeaturedOffer;
 use App\Entity\Newsletter;
 use App\Form\ContactType;
 use App\Form\NewsletterType;
 use App\Repository\ArticleRepository;
+use App\Repository\FeaturedOfferRepository;
 use App\Repository\OfferRepository;
 use App\Repository\SliderRepository;
 use App\service\MailerService;
@@ -42,9 +44,15 @@ class HomeController extends AbstractController
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function index(OfferRepository $offerrRepository,SliderRepository $sliderRepository, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $manager): Response
+    public function index(OfferRepository $offerrRepository,
+                          SliderRepository $sliderRepository,
+                          ArticleRepository $articleRepository,
+                          FeaturedOfferRepository $featuredOfferRepository,
+                          Request $request,
+                          EntityManagerInterface $manager): Response
     {
         $offers = $offerrRepository->findByIsDisplayed(true);
+        $featuredOffers = $featuredOfferRepository->findByIsActive(true);
         $sliders = $sliderRepository->findByIsDisplayed(true);
         $articles = $articleRepository->findBy([], array("id"=>'DESC'), 3);
         $newsletter = new Newsletter();
@@ -65,11 +73,11 @@ class HomeController extends AbstractController
         }
 
         return $this->render('frontend/pages/home.html.twig' ,
-            ["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView(), "offers"=>$offers]);
+            ["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView(), "offers"=>$offers, "featuredOffers"=>$featuredOffers]);
     }
 
     /**
-     * @Route("/my-travel-agencey", name="my_travel_agencey", methods={"get"})
+     * @Route("/my-travel-agency", name="my_travel_agencey", methods={"get"})
      */
     public function myTravelAgency(): Response
     {
@@ -77,7 +85,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact", methods={"GET|POST"})
+     * @Route("/contacts", name="contact", methods={"GET|POST"})
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param MailerService $mailerService

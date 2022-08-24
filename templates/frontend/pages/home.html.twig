@@ -372,8 +372,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -381,7 +379,7 @@
     <!-- why us ends -->
 
     <!-- carossel-->
-    {{ include('frontend/includes/offre.html.twig',  {'offers':offers}) }}
+    {{ include('frontend/includes/offre_du_moment.html.twig',  {'offers':featuredOffers}) }}
     <!-- fin carrrossel-->
 
     <!-- about-us starts -->
@@ -429,6 +427,10 @@
     <!-- News Starts -->
     {{ include('frontend/includes/news_articles.html.twig', {'articles':articles}) }}
     <!-- News Ends -->
+
+    <!-- form -->
+    {{ include('frontend/includes/form_on_all_page.html.twig') }}
+    <!-- form -->
 
 
 

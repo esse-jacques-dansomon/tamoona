@@ -73,7 +73,7 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/category/{slug}", name="blog_category", methods={"GET"})
+     * @Route("/blog/categorie/{slug}", name="blog_category", methods={"GET"})
      * @param Category|null $category
      * @param PaginatorInterface $paginator
      * @param Request $request

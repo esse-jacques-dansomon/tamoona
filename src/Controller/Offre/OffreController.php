@@ -64,7 +64,7 @@ class OffreController extends AbstractController
      */
     public function detailOffre(Offer $offer, Request $request, EntityManagerInterface $manager, OfferRepository $offerRepository): Response
     {
-        if($offer and $offer->getIsDisplayed() == true)
+        if($offer and $offer->getIsDisplayed())
         {
             $booking = new Booking();
             $offers = $offerRepository->findBy(['isDisplayed'=> true ],['id'=>'DESC'],3);

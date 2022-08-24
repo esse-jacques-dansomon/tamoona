@@ -1,7 +1,7 @@
 {% extends 'frontend/base.html.twig' %}
 {% block body %}
 <!-- BreadCrumd starts -->
-{{ include('/frontend/includes/bread_crumd.html.twig', {'page_name': "Offer | " ~  offre.title}) }}
+{{ include('/frontend/includes/bread_crumd.html.twig', {'page_name': "Offre | " ~  offre.title}) }}
 <!-- BreadCrumd starts -->
 <!-- blog starts -->
 <section class="blog trending destination-b">
@@ -14,7 +14,9 @@
                             <h3 class="mb-1">{{  offre.title }}</h3>
                             <div class="rating-main d-sm-flex align-items-center">
                                 <p class="mb-0 mr-2"><i class="flaticon-location-pin"></i> {{  offre.destination }}</p>
+                                {% if offre.price > 0 %}
                                 <p class="mb-0 mr-2"><i class=""></i> A Partir de  {{  offre.price|number_format(0, '.', ',') }} FCFA</p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -34,9 +36,13 @@
                         <table>
                             <tbody>
                             <tr>
+                                {% if offre.nombreDeJour > 0  %}
                                 <td><i class="fa fa-clock-o pink mr-1" aria-hidden="true"></i> {{ offre.nombreDeJour}} jours</td>
-                                <td><i class="fa fa-group pink mr-1" aria-hidden="true"></i> Nonre maximum de personnes : {{ offre.nombreMaxPersonne}}</td>
-                                <td><i class="fa fa-calendar pink mr-1" aria-hidden="true"></i> {{ offre.delaiAt| date("d M Y") }}</td>
+                                {% endif %}
+                                {% if offre.nombreMaxPersonne > 0  %}
+                                <td><i class="fa fa-group pink mr-1" aria-hidden="true"></i> Nombre maximum de personnes : {{ offre.nombreMaxPersonne}}</td>
+{#                                <td><i class="fa fa-calendar pink mr-1" aria-hidden="true"></i> {{ offre.delaiAt| date("d M Y") }}</td>#}
+                                {% endif %}
                             </tr>
                             </tbody>
                         </table>
@@ -64,18 +70,16 @@
                         </div>
                     </div>
 
-                    {% set accordions = offre.programme |split('|') %}
                     <div class="accrodion-grp faq-accrodion mb-4" data-grp-name="faq-accrodion">
 
-                        {% for key, accordeon in accordions  %}
-                            {% set element = accordeon |split('*') %}
-                        <div class="accrodion {% if key == 0 %} active {% endif%} " >
+                        {% for programme in offre.programmes  %}
+                        <div class="accrodion {% if programme.programmeOrder == 1 %} active {% endif%} " >
                             <div class="accrodion-title" style=" background-color: #94703C">
-                                <h5 class="mb-0"><span >{{ element[0] }}</span>  </h5>
+                                <h5 class="mb-0"><span >{{ programme.title }}</span>  </h5>
                             </div>
                             <div class="accrodion-content" style="display: block;">
                                 <div class="inner">
-                                    <p>{{ element[1] }}</p>
+                                    <p>{{ programme.description }}</p>
                                 </div><!-- /.inner -->
                             </div>
                         </div>
@@ -114,7 +118,6 @@
                                         {{ form_row(form.nombrePersonne) }}
                                     </div>
 
-
                                 <div class="comment-btn text-right mt-1">
                                     <input type="submit" class="btn btn-large btn-block" style=" color: white;background-color: black" value="Envoyer ">
                                 </div>
@@ -123,26 +126,26 @@
 
                         </div>
 
-                        <div class="sidebar-item" >
-                            <div class="location-rating mb-2 mt-2">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-lg-2 col-md-2">
-                                        <span class="location-box">4.5</span>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10">
-                                        <p class="mb-0">Exceptional</p>
-                                        <span>Location rating score</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="location-features">
-                                <ul>
-                                    <li class="mb-2"><i class="fa fa-map-marker pink mr-2"></i> Better than 99% of properties in London</li>
-                                    <li class="mb-2"><i class="fa fa-map-marker pink mr-2"></i> Exceptional Location - Inside city center</li>
-                                    <li><i class="fa fa-map-marker pink mr-2"></i> Popular Neighbourhood</li>
-                                </ul>
-                            </div>
-                        </div>
+{#                        <div class="sidebar-item" >#}
+{#                            <div class="location-rating mb-2 mt-2">#}
+{#                                <div class="row d-flex align-items-center">#}
+{#                                    <div class="col-lg-2 col-md-2">#}
+{#                                        <span class="location-box">4.5</span>#}
+{#                                    </div>#}
+{#                                    <div class="col-lg-10 col-md-10">#}
+{#                                        <p class="mb-0">Exceptional</p>#}
+{#                                        <span>Location rating score</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="location-features">#}
+{#                                <ul>#}
+{#                                    <li class="mb-2"><i class="fa fa-map-marker pink mr-2"></i> Better than 99% of properties in London</li>#}
+{#                                    <li class="mb-2"><i class="fa fa-map-marker pink mr-2"></i> Exceptional Location - Inside city center</li>#}
+{#                                    <li><i class="fa fa-map-marker pink mr-2"></i> Popular Neighbourhood</li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
 
                         <div class="sidebar-item" style="background-color: #94703C!important;">
                             <div class="sidebar-contact text-center "  >
@@ -188,14 +191,18 @@
                                     </a></h4>
                             </div>
                             <div class="trend-last-main">
-                                <p class="mb-0 trend-para">{{ offreSimilaire.description }}</p>
+                                <p class="mb-0 trend-para">{{ offreSimilaire.shortDescription }}</p>
                                 <div class="trend-last d-flex align-items-center justify-content-between " style="background-color: #94703C">
                                     <p class="mb-0 white" ><i class="fa fa-info-o" aria-hidden="true"></i>
                                         <a href="{{ path('offre_detail', { slug : offreSimilaire.slug }) }}" class="white">En Savoir Plus</a>
                                     </p>
+                                    {% if offreSimilaire.price>0  %}
                                     <div class="trend-price">
-                                        <p class="price white mb-0">FCFA <span class="font-weight-light">{{ offreSimilaire.price|number_format(0, '.', ',') }}</span></p>
+                                        <p class="price white mb-0">FCFA <span class="font-weight-light">
+                                                {{ offreSimilaire.price|number_format(0, '.', ',') }}
+                                            </span></p>
                                     </div>
+                                        {% endif %}
                                 </div>
                             </div>
                         </div>

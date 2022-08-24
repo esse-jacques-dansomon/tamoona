@@ -17,6 +17,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class OfferCrudController extends AbstractCrudController
 {
@@ -25,13 +26,18 @@ class OfferCrudController extends AbstractCrudController
         return Offer::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+        $crud->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
+        return $crud;
+    }
+
     public function configureActions(Actions $actions): Actions
     {
         return $actions
             // ...
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_ADD_ANOTHER)
-            ;
+            ->add(Crud::PAGE_EDIT, Action::SAVE_AND_ADD_ANOTHER);
     }
 
     public function configureFields(string $pageName): iterable
@@ -44,20 +50,17 @@ class OfferCrudController extends AbstractCrudController
             TextField::new('title', 'Titre'),
             AssociationField::new("bookings")->hideOnForm(),
             SlugField::new("slug")->setTargetFieldName("title")->hideOnIndex(),
-            TextareaField::new('description', 'Description')->setNumOfRows(2),
+            TextareaField::new('shortDescription', 'Courte Description')->setNumOfRows(2),
+            TextareaField::new('description', 'Description')->setNumOfRows(2)->hideOnIndex(),
             TextField::new('destination', 'Destination'),
             NumberField::new('price', 'Prix'),
             NumberField::new('nombreDeJour', 'Durée'),
             NumberField::new('nombreMaxPersonne', 'Nombre Maximum de personnes')->hideOnIndex(),
-            ChoiceField::new('category', 'Categorie')->setChoices(["Sénegal"=>"Sénegal","Autres" => "Autres"]),
-            DateTimeField::new('delaiAt', 'Date'),
+            ChoiceField::new('category', 'Categorie')->setChoices(["Sénegal"=>"Sénegal","Offres du moment"=>"offres_du_moment","Autres" => "Autres"]),
             TextField::new('badgeTexte', 'Texte De Badge')->hideOnIndex(),
             TextareaField::new('services', 'Services Proposés')->hideOnIndex(),
-            TextareaField::new('programme', 'Programme du voyage')->hideOnIndex()
-                ->setHelp(
-                    "Exemple de programme<br>
-                            Day 1 - Barcelona - Zaragoza - Madrid<br>
-                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. "),
+
+
             BooleanField::new('isDisplayed', 'Afficher'),
         ];
     }

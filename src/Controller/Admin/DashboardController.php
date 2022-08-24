@@ -7,8 +7,10 @@ use App\Entity\Booking;
 use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Contact;
+use App\Entity\FeaturedOffer;
 use App\Entity\Newsletter;
 use App\Entity\Offer;
+use App\Entity\OfferProgramme;
 use App\Entity\Role;
 use App\Entity\Slider;
 use App\Entity\Tags;
@@ -50,7 +52,9 @@ class DashboardController extends AbstractDashboardController
         }
         yield MenuItem::section('Gestion des Offres');
         yield MenuItem::linkToCrud('Offres', 'fab fa-buffer', Offer::class);
-        yield MenuItem::linkToCrud('Booking', 'fas fa-suitcase-rolling', Booking::class);
+        yield MenuItem::linkToCrud('Programmes', 'fas fa-list', OfferProgramme::class);
+        yield MenuItem::linkToCrud('Offres du moment', 'fab fa-buffer', FeaturedOffer::class);
+        yield MenuItem::linkToCrud('Booking', 'fa fa-suitcase-rolling', Booking::class);
 
         yield MenuItem::section('Gestion Blog');
         yield MenuItem::linkToCrud('Articles', 'far fa-newspaper', Article::class);

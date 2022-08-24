@@ -65,6 +65,9 @@
         </div>
     </div>
 </section>
+    <!-- form -->
+    {{ include('frontend/includes/form_on_all_page.html.twig') }}
+    <!-- form -->
 {% else %}
 <div class="contact-info  text-center mt-5 mb-5">
     <h3 class="">Aucune Article trouvé</h3>
@@ -83,4 +86,6 @@
 </div>
     {% endif %}
     <!-- blog Ends -->
-    {% endblock %}
+{% endblock %}
+
+

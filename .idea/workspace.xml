@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b13ca9c3-5a27-47c7-a6b2-93038098557f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_du_moment.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/leogout_seo.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/leogout_seo.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OfferCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/OfferCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/blog/blog.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/news_articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/news_articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_grid.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_grid.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/decouverte_senegal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/decouverte_senegal.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,11 +218,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;P:/Laravel/laravel_learn&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.composer&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -231,6 +252,12 @@
       <workItem from="1650334989828" duration="1073000" />
       <workItem from="1650902895293" duration="9461000" />
       <workItem from="1650916919958" duration="3861000" />
+      <workItem from="1651056581958" duration="708000" />
+      <workItem from="1653405052771" duration="242000" />
+      <workItem from="1653405322792" duration="954000" />
+      <workItem from="1659101638167" duration="5534000" />
+      <workItem from="1661167737065" duration="9259000" />
+      <workItem from="1661335235027" duration="9082000" />
     </task>
     <servers />
   </component>

@@ -42,20 +42,17 @@ class Offer
     private ?string $destination;
 
     /**
-     * @ORM\Column(type="text")
-     * @Assert\NotBlank()
+     * @ORM\Column(type="text", nullable=true)
      */
     private ?string $description;
 
     /**
-     * @ORM\Column(type="datetime")
-     * @Assert\NotBlank()
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private ?\DateTimeInterface $delaiAt;
 
     /**
-     * @ORM\Column(type="float")
-     * @Assert\NotBlank()
+     * @ORM\Column(type="float", nullable=true)
      */
     private ?float $price;
 
@@ -70,17 +67,17 @@ class Offer
     private ?bool $isDisplayed;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $services;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $programme;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",  nullable=true)
      */
     private $nombreDeJour;
 
@@ -105,6 +102,16 @@ class Offer
     private $slug;
 
     /**
+     * @ORM\OneToMany(targetEntity=OfferProgramme::class, mappedBy="offer")
+     */
+    private $programmes;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $shortDescription;
+
+    /**
      * Offer constructor.
      * @param bool|null $isDisplayed
      */
@@ -112,6 +119,7 @@ class Offer
     {
         $this->isDisplayed = true;
         $this->bookings = new ArrayCollection();
+        $this->programmes = new ArrayCollection();
     }
 
 
@@ -321,6 +329,49 @@ class Offer
     {
         // TODO: Implement __toString() method.
         return $this->title;
+    }
+
+    /**
+     * @return array|Collection|mixed[]
+     */
+    public function getProgrammes()
+    {
+        return $this->programmes;
+
+    }
+
+    public function addProgramme(OfferProgramme $programme): self
+    {
+        if (!$this->programmes->contains($programme)) {
+            $this->programmes[] = $programme;
+            $programme->setOffer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProgramme(OfferProgramme $programme): self
+    {
+        if ($this->programmes->removeElement($programme)) {
+            // set the owning side to null (unless already changed)
+            if ($programme->getOffer() === $this) {
+                $programme->setOffer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getShortDescription(): ?string
+    {
+        return $this->shortDescription;
+    }
+
+    public function setShortDescription(?string $shortDescription): self
+    {
+        $this->shortDescription = $shortDescription;
+
+        return $this;
     }
 
 

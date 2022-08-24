@@ -1,0 +1,32 @@
+<!-- Trending Starts -->
+{%if  offers is not empty  %}
+
+<section class="trending destination-b pb-6 pt-7">
+    <div class="container">
+        <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+            <h2 class="m-0">Nos offres  <span>du moment</span></h2>
+{#            <p class="mb-0">Travel has helped us to understand the meaning of life and it has helped us become better people. Each time we travel, we see the world with new eyes.</p>#}
+        </div>
+        <div class="trend-box">
+            <div class="row team-slider">
+                {% for offer in offers  %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="{{ offer.link }}" target="_blank">
+                    <div class="trend-item">
+
+                        <div class="trend-image">
+
+                                <img  src="/images/offers/{{ offer.image }}" alt="image" height="300px">
+                        </div>
+                    </div>
+                    </a>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Trending Ends -->
