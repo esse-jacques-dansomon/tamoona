@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b13ca9c3-5a27-47c7-a6b2-93038098557f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_du_moment.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/OfferCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/OfferCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/blog/blog.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/blog/blog.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/news_articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/news_articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_grid.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_grid.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/decouverte_senegal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/decouverte_senegal.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +22,11 @@
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -147,7 +134,6 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug-bundle" />
@@ -257,7 +243,7 @@
       <workItem from="1653405322792" duration="954000" />
       <workItem from="1659101638167" duration="5534000" />
       <workItem from="1661167737065" duration="9259000" />
-      <workItem from="1661335235027" duration="9082000" />
+      <workItem from="1661335235027" duration="20215000" />
     </task>
     <servers />
   </component>

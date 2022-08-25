@@ -6,16 +6,12 @@
 /config/secrets/prod/prod.decrypt.private.php
 /var/
 /vendor/
-/public/bundles/**
-/public/bundles/
-/public/css/
-/public/js/
+/var/cache/
 /public/images/
 /public/favicon.ico
 /public/favicon.gif
-/public/favicon.ico
 .idea/workspace.xml
-
+.composer.phar
 ###> symfony/framework-bundle ###
 ###< symfony/framework-bundle ###
 
