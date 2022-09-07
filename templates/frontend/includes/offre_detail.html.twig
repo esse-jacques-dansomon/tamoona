@@ -75,11 +75,11 @@
                         {% for programme in offre.programmes  %}
                         <div class="accrodion {% if programme.programmeOrder == 1 %} active {% endif%} " >
                             <div class="accrodion-title" style=" background-color: #94703C">
-                                <h5 class="mb-0"><span >{{ programme.title }}</span>  </h5>
+                                <h5 class="mb-0"><span >{{ programme.title  }}</span>  </h5>
                             </div>
                             <div class="accrodion-content" style="display: block;">
                                 <div class="inner">
-                                    <p>{{ programme.description }}</p>
+                                    <p>{{  programme.description | raw }}</p>
                                 </div><!-- /.inner -->
                             </div>
                         </div>

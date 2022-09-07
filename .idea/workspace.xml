@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b13ca9c3-5a27-47c7-a6b2-93038098557f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +243,9 @@
       <workItem from="1653405322792" duration="954000" />
       <workItem from="1659101638167" duration="5534000" />
       <workItem from="1661167737065" duration="9259000" />
-      <workItem from="1661335235027" duration="22879000" />
+      <workItem from="1661335235027" duration="25448000" />
+      <workItem from="1661437791230" duration="2938000" />
+      <workItem from="1662543969514" duration="2365000" />
     </task>
     <servers />
   </component>

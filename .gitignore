@@ -8,6 +8,9 @@
 /vendor/
 /var/cache/
 /public/images/
+/public/uploads/
+/public/bundles/
+/public/bundles/*
 /public/favicon.ico
 /public/favicon.gif
 .idea/workspace.xml
@@ -16,6 +19,7 @@
 ###< symfony/framework-bundle ###
 
 .env
+.env.prod
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
