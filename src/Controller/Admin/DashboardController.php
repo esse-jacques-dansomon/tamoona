@@ -14,6 +14,8 @@ use App\Entity\OfferProgramme;
 use App\Entity\Role;
 use App\Entity\Slider;
 use App\Entity\Tags;
+use App\Entity\Team;
+use App\Entity\TeamImage;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -39,7 +41,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Tamoona');
+            ->setTitle('Tamonna');
     }
 
     public function configureMenuItems(): iterable
@@ -49,6 +51,8 @@ class DashboardController extends AbstractDashboardController
         {
             yield MenuItem::section('Gerer les Users');
             yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-user-circle', User::class);
+            yield MenuItem::linkToCrud('Equipes', 'fa fa-users', Team::class);
+            yield MenuItem::linkToCrud('Images Teams', 'fa-light fa-image', TeamImage::class);
         }
         yield MenuItem::section('Gestion des Offres');
         yield MenuItem::linkToCrud('Offres', 'fab fa-buffer', Offer::class);

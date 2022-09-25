@@ -10,7 +10,6 @@
 /public/images/
 /public/uploads/
 /public/bundles/
-/public/bundles/*
 /public/favicon.ico
 /public/favicon.gif
 .idea/workspace.xml
@@ -27,3 +26,5 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 .idea
+.idea/workspace.xml'
+.idea/

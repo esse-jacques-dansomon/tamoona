@@ -5,10 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b13ca9c3-5a27-47c7-a6b2-93038098557f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/Version20220923120515.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/TeamCrudController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/TeamImageCrudController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Team.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/TeamImage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TeamImageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TeamRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_du_moment_grid.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/offre_detail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210927185729.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210930090708.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210930220211.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211002203140.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211003045605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211118141022.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211118162732.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211118164906.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211125155302.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20220925164403.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20211126045344.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20220822115605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20220822130008.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20220824130320.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/custom-swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom-swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Offre/OffreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Pages/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/js.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/includes/slider.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/my_travel_agencey.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/frontend/pages/offres.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +54,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="prod" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -197,14 +227,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="25vWcZm7NGg8XJaSWPVWxWgxGKS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;P:/Laravel/laravel_learn&quot;,
+    &quot;last_opened_file_path&quot;: &quot;P:/Symfony/tamoona_symfony/templates/frontend/includes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -214,6 +248,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="P:\Symfony\tamoona_symfony\templates\frontend\includes" />
+      <recent name="P:\Symfony\tamoona_symfony\public\images\pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -245,7 +285,16 @@
       <workItem from="1661167737065" duration="9259000" />
       <workItem from="1661335235027" duration="25448000" />
       <workItem from="1661437791230" duration="2938000" />
-      <workItem from="1662543969514" duration="2365000" />
+      <workItem from="1662543969514" duration="10779000" />
+      <workItem from="1662734177095" duration="779000" />
+      <workItem from="1662829544841" duration="587000" />
+      <workItem from="1663019534365" duration="4007000" />
+      <workItem from="1663176541136" duration="57000" />
+      <workItem from="1663766866989" duration="2023000" />
+      <workItem from="1663772762433" duration="597000" />
+      <workItem from="1663779922831" duration="11567000" />
+      <workItem from="1663968542461" duration="3326000" />
+      <workItem from="1664110679119" duration="11186000" />
     </task>
     <servers />
   </component>
@@ -262,5 +311,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

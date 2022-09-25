@@ -1,0 +1,48 @@
+{% if offers is defined  %}
+<!-- blog starts -->
+<section class="blog trending destination-b pb-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xs-12 mb-4">
+                <div class="trend-box">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="list-results d-flex align-items-center justify-content-between">
+
+                            </div>
+                        </div>
+                        {% for offer in offers %}
+
+                                <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
+                                    <div class="trend-item">
+                                        <div class="trend-image">
+                                            <a href="https://form.typeform.com/to/YP8RhWwE">
+                                                <img  src="/images/offers/{{ offer.image }}" height="320px"  width="100%" alt="image">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                        {% else %}
+                            <div class="section-title text-center mb-5 pb-2 w-50 mx-auto">
+                                <h2 class="m-0">Oops <span>Aucune offre</span></h2>
+                                <p class="mb-0">Nous ne disposons pas encore d'offres pour l'instant </p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <a href="{{ path('contact') }}" class="nir-btn">Nous Contacter <i class="fa fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog Ends -->
+
+
+{% endif %}

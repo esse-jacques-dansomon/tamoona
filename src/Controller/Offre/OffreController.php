@@ -5,6 +5,7 @@ namespace App\Controller\Offre;
 use App\Entity\Booking;
 use App\Entity\Offer;
 use App\Form\BookingType;
+use App\Repository\FeaturedOfferRepository;
 use App\Repository\OfferRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
@@ -31,12 +32,13 @@ class OffreController extends AbstractController
      * @param OfferRepository $offerRepository
      * @return Response
      */
-    public function index(OfferRepository $offerRepository)
+    public function index(OfferRepository $offerRepository, FeaturedOfferRepository $featuredOfferRepository)
     {
 
         $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'autres']);
         return $this->render('frontend/pages/offres.html.twig', [
-            "offers"=>$offers
+            "offers"=>$offers,
+            "featuredOffers"=>$featuredOfferRepository->findAll()
         ]);
     }
 

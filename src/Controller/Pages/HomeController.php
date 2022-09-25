@@ -11,6 +11,7 @@ use App\Repository\ArticleRepository;
 use App\Repository\FeaturedOfferRepository;
 use App\Repository\OfferRepository;
 use App\Repository\SliderRepository;
+use App\Repository\TeamRepository;
 use App\service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
@@ -79,9 +80,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/my-travel-agency", name="my_travel_agencey", methods={"get"})
      */
-    public function myTravelAgency(): Response
+    public function myTravelAgency(TeamRepository $teamRepository): Response
     {
-        return $this->render('frontend/pages/my_travel_agencey.html.twig');
+
+        $teams = $teamRepository->findAll();
+        return $this->render('frontend/pages/my_travel_agencey.html.twig', ["teams"=>$teams]);
     }
 
     /**

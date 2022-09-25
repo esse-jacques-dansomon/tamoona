@@ -476,3 +476,19 @@ function resize_eb_slider() {
         jQuery('.slider').css('height', `${bodyheight}px`);
     }
 }
+
+var TeamsSwiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    mousewheel: {
+        invert: true,
+    },
+    keyboard: {
+        enabled: true,
+    },
+    autoplay: {
+        delay: 1000,
+    },
+    loop: true,
+
+});
