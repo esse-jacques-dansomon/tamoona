@@ -479,7 +479,6 @@ function resize_eb_slider() {
 
 var TeamsSwiper = new Swiper(".mySwiper", {
     effect: "coverflow",
-    grabCursor: true,
     mousewheel: {
         invert: true,
     },
@@ -487,7 +486,7 @@ var TeamsSwiper = new Swiper(".mySwiper", {
         enabled: true,
     },
     autoplay: {
-        delay: 1000,
+        delay: 5000,
     },
     loop: true,
 
