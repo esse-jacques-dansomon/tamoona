@@ -35,7 +35,7 @@ class OffreController extends AbstractController
     public function index(OfferRepository $offerRepository, FeaturedOfferRepository $featuredOfferRepository)
     {
 
-        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'autres']);
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'autres', 'id' => 'DESC']);
         return $this->render('frontend/pages/offres.html.twig', [
             "offers"=>$offers,
             "featuredOffers"=>$featuredOfferRepository->findAll()
@@ -50,7 +50,7 @@ class OffreController extends AbstractController
     public  function admin(OfferRepository $offerRepository)
     {
 
-        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'senegal']);
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'senegal', 'id' => 'DESC']);
         return $this->render('frontend/pages/decouverte_senegal.html.twig', [
             "offers"=>$offers
         ]);

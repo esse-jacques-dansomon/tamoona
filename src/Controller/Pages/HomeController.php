@@ -52,8 +52,7 @@ class HomeController extends AbstractController
                           Request $request,
                           EntityManagerInterface $manager): Response
     {
-        $offers = $offerrRepository->findByIsDisplayed(true);
-        $featuredOffers = $featuredOfferRepository->findByIsActive(true);
+        $featuredOffers = $featuredOfferRepository->findBy(["isActive" => true ], ['id' => 'DESC']);
         $sliders = $sliderRepository->findByIsDisplayed(true);
         $articles = $articleRepository->findBy([], array("id"=>'DESC'), 3);
         $newsletter = new Newsletter();
@@ -74,7 +73,7 @@ class HomeController extends AbstractController
         }
 
         return $this->render('frontend/pages/home.html.twig' ,
-            ["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView(), "offers"=>$offers, "featuredOffers"=>$featuredOffers]);
+            ["sliders"=>$sliders, "articles"=>$articles, 'form'=>$form->createView(), "featuredOffers"=>$featuredOffers]);
     }
 
     /**
