@@ -55,7 +55,7 @@ class Article
     /**
      * @ORM\Column(type="boolean")
      */
-    private ?bool $isDeleted;
+    private ?bool $isDeleted = false;
 
 
     /**

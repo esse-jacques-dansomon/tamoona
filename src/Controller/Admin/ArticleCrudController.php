@@ -6,6 +6,7 @@ use App\Entity\Article;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
@@ -63,6 +64,8 @@ class ArticleCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern("[name][timestamp].[extension]"),
             //TextEditorField::new('content', "Contenu de l'article"),
             TextareaField::new('content', "Contenu de l'article")->setFormType(CKEditorType::class)->hideOnIndex(),
+            BooleanField::new('is_deleted', "Afficher ?")->setRequired(true),
+
 
         ];
     }
