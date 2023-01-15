@@ -27,7 +27,7 @@ class TeamCrudController extends AbstractCrudController
             TextField::new('poste')->setRequired(true),
             TextField::new('favoriteDestination', "Destination préférée"),
             TextareaField::new('travelStory', "Histoire de voyage"),
-            BooleanField::new('isCitation', "Citation")->setRequired(true),
+            BooleanField::new('isCitation', "Citation"),
         ];
     }
 

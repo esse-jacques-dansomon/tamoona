@@ -21,8 +21,7 @@ class UserCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add('role')
-            ;
+            ->add('role');
     }
 
     public static function getEntityFqcn(): string
@@ -35,7 +34,7 @@ class UserCrudController extends AbstractCrudController
         return $actions
             // ...
             ->add(Crud::PAGE_INDEX, Action::DETAIL)
-                        ->remove(Crud::PAGE_INDEX, Action::NEW)
+//                        ->remove(Crud::PAGE_INDEX, Action::NEW)
                         ->remove(Crud::PAGE_INDEX, Action::EDIT)
                         ->remove(Crud::PAGE_INDEX, Action::DELETE)
                         ->remove(Crud::PAGE_INDEX, Action::DETAIL)
