@@ -34,7 +34,7 @@
                             </div>
                             <div class="news-content mt-2 mb-1">
                                 <h4 class="bordernone mb-0"><a href="{{ path('article_detail', {'slug':article.slug}) }}">
-                                        {{ article.title|capitalize }}
+                                        {{ article.title| upper }}
                                     </a></h4>
                             </div>
                             <a href="{{ path('article_detail', {'slug':article.slug}) }}" class=""><u>Lire l'article</u></a>

@@ -21,7 +21,7 @@
                                     <div class="trend-content">
                                         <div class="rating pb-1">
                                         </div>
-                                        <h4><a href="{{ path('offre_detail', { slug : offer.slug }) }}">{{ offer.title }}</a></h4>
+                                        <h4><a href="{{ path('offre_detail', { slug : offer.slug }) }}">{{ offer.title | upper }}</a></h4>
                                         <p class="mb-0 pink"><i class="fa fa-location-arrow mr-1"></i> {{ offer.destination }}
                                             <i class="fa fa-clock mr-1 ml-3"></i> {{offer.delaiAt|date("d M Y")  }}</p>
                                     </div>

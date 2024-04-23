@@ -11,7 +11,7 @@
                     <div class="single-content">
                         <div class="single-full-title border-b mb-2 pb-2">
                             <div class="single-title">
-                                <h3 class="mb-1">{{  offre.title }}</h3>
+                                <h3 class="mb-1">{{  offre.title | upper }}</h3>
                                 <div class="rating-main d-sm-flex align-items-center">
                                     <p class="mb-0 mr-2"><i class="flaticon-location-pin"></i> {{  offre.destination }}</p>
                                     {% if offre.price > 0 %}

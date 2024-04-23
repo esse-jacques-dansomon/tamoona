@@ -19,7 +19,7 @@ class NewsletterType extends AbstractType
                 [
                     'label' => false,
                     'required'=>true,
-                    'attr' => ['class' => 'form-control ', 'placeholder'=>'votre Email']
+                    'attr' => ['class' => 'form-control ', 'placeholder'=>'Votre email']
                 ])
         ;
     }

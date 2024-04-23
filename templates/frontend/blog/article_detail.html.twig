@@ -27,13 +27,12 @@
                             <div class="col-lg-10 col-md-10">
                                 <div class="blog-content mb-4 pt-0">
                                     <h3 class="blog-title"><a href="#" class="yellow">{{ article.title }}</a></h3>
-                                    <div class="para-content mb-2">
-                                        <span class="mr-2"><a href="#" class="tag pink"><i class="fa fa-tag mr-1"></i> Auteur </a></span>
-                                        <span class="mr-2"><a href="#" class="pink"><i class="fa fa-user mr-1"></i> {{ article.author }}</a></span>
-                                        <span><a href="#" class="pink"><i class="fa fa-comment"></i>  {{ article.comments|length }}</a></span>
-                                    </div>
-                                    <p class="mb-0">
-                                        {{ article.content|raw }}
+{#                                    <div class="para-content mb-2">#}
+{#                                        <span class="mr-2"><a href="#" class="tag pink"><i class="fa fa-tag mr-1"></i> Auteur </a></span>#}
+{#                                        <span class="mr-2"><a href="#" class="pink"><i class="fa fa-user mr-1"></i> {{ article.author }}</a></span>#}
+{#                                        <span><a href="#" class="pink"><i class="fa fa-comment"></i>  {{ article.comments|length }}</a></span>#}
+{#                                    </div>#}
+                                    <p class="mb-0">{{ article.content|raw }}
                                     </p>
                                 </div>
 

@@ -32,7 +32,7 @@
                                     <div class="blog-content pb-0">
                                         <span class="h-date pink mb-1 font-weight-light d-block"> {{ article.createdAt|date("d M Y") }}</span>
                                         <h3 class="mb-2"><a href="{{ path('article_detail', {"slug":article.slug}) }}"
-                                                            class="">{{ article.title }}</a></h3>
+                                                            class="">{{ article.title  | upper}}</a></h3>
                                         {% if article.postsCategory %}
                                             <p class="date-cats mb-0 border-t pt-2 pb-2">
                                                 {% for categorie in article.postsCategory %}
