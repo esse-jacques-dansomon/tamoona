@@ -6,15 +6,11 @@
                 <div class="col-lg-12 col-xs-12 mb-4">
                     <div class="trend-box">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="list-results d-flex align-items-center justify-content-between">
-
-                                </div>
-                            </div>
                             {% for offer in offers %}
 
                                 <div class="col-lg-4 col-md-6 col-xs-12 mb-4">
-                                    <div class="trend-item">
+{#                                    trend-item#}
+                                    <div class=" w-100">
                                         <div class="trend-image">
                                             <a href="/images/offers/{{ offer.image }}" target="_blank">
                                                 <img  src="/images/offers/{{ offer.image }}" height="320px"  width="100%" alt="image">
@@ -46,3 +42,7 @@
 
 
 {% endif %}
+
+<style>
+
+</style>
