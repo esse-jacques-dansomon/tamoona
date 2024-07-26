@@ -50,7 +50,7 @@ class OffreController extends AbstractController
     public  function admin(OfferRepository $offerRepository)
     {
 
-        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'Sénégal']);
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'Sénégal', 'id' => 'DESC'  ]);
         return $this->render('frontend/pages/decouverte_senegal.html.twig', [
             "offers"=>$offers
         ]);
