@@ -35,7 +35,8 @@ class OffreController extends AbstractController
     public function index(OfferRepository $offerRepository, FeaturedOfferRepository $featuredOfferRepository)
     {
 
-        $offers = $offerRepository->findBy(['isDisplayed'=> true, 'category'=>'autres', 'id' => 'DESC']);
+        // $offers = $offerRepository->findBy(['isDisplayed'=> true, 'category'=>'autres', 'id' => 'DESC']);
+        $offers = $offerRepository->findBy(['isDisplayed'=>true ]);
         return $this->render('frontend/pages/offres.html.twig', [
             "offers"=>$offers,
             "featuredOffers"=>$featuredOfferRepository->findBy(['isActive'=> true],['id'=>'DESC'])
