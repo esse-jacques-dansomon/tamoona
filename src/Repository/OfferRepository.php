@@ -34,6 +34,17 @@ class OfferRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByIsDisplayAndCategory($value, $category){
+        return $this->createQueryBuilder('o')
+            ->andWhere("o.category = :val")
+            ->setParameter('val', $category)
+            ->andWhere('o.isDisplayed = :isDisplayed')
+            ->setParameter('isDisplayed', $value)
+            ->orderBy('o.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Offer

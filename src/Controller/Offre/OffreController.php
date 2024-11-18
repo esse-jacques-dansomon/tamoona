@@ -51,7 +51,7 @@ class OffreController extends AbstractController
     public  function myDmc(OfferRepository $offerRepository)
     {
 
-        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'Sénégal', 'id' => 'DESC'  ]);
+        $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'Sénegal', 'id' => 'DESC'  ]);
         return $this->render('frontend/pages/decouverte_senegal.html.twig', [
             "offers"=>$offers
         ]);
