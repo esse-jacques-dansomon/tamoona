@@ -42,9 +42,9 @@
                                 <a  class="dropdown-toggle"   href="{{ path('home') }}"  role="button" aria-haspopup="true" aria-expanded="false">Accueil  </a>
                             </li>
                             <li  {% if app.request.get('_route') == 'my_travel_agencey' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %} ><a class="nav-link"   href="{{ path('my_travel_agencey') }}" >My Travel Agency</a></li>
+                            <li{% if app.request.get('_route') == 'presentation_senegal' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %}  ><a class="nav-link"  href="{{ path('presentation_senegal') }}" >My DMC</a></li>
                             <li {% if app.request.get('_route') == 'blog' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %}  ><a class="nav-link"  href="{{ path('blog') }}">Blog</a></li>
                             <li {% if app.request.get('_route') == 'offres' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %} ><a class="nav-link"  href="{{ path('offres') }}">Offres</a></li>
-                            <li{% if app.request.get('_route') == 'presentation_senegal' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %}  ><a class="nav-link"  href="{{ path('presentation_senegal') }}" >Découverte Sénégal</a></li>
                             <li {% if app.request.get('_route') == 'contact' %} class="nav-item active"{% else%} class="nav-item submenu" {% endif %} ><a  class="nav-link"  href="{{ path('contact') }}" >Contact</a></li>
 {#                            If user is connected#}
                             {% if  (app.user) %}

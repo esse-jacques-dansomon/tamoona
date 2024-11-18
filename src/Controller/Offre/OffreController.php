@@ -43,11 +43,11 @@ class OffreController extends AbstractController
     }
 
     /**
-     * @Route("/decouverte-du-senegal", name="presentation_senegal", methods={"get"})
+     * @Route("/my-dmc", name="presentation_senegal", methods={"get"})
      * @param OfferRepository $offerRepository
      * @return Response
      */
-    public  function admin(OfferRepository $offerRepository)
+    public  function myDmc(OfferRepository $offerRepository)
     {
 
         $offers = $offerRepository->findBy(['isDisplayed'=>true, 'category'=>'Sénégal', 'id' => 'DESC'  ]);

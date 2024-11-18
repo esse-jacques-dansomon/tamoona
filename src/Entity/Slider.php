@@ -53,6 +53,11 @@ class Slider
      */
     private ?bool $isDisplayed;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default": false})
+     */
+    private $isVideo = false;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,5 +140,17 @@ class Slider
     public function __toString()
     {
         return $this->title;
+    }
+
+    public function getIsVideo(): ?bool
+    {
+        return $this->isVideo;
+    }
+
+    public function setIsVideo(bool $isVideo): self
+    {
+        $this->isVideo = $isVideo;
+
+        return $this;
     }
 }

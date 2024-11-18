@@ -82,7 +82,9 @@ class HomeController extends AbstractController
     public function myTravelAgency(TeamRepository $teamRepository): Response
     {
 
-        $teams = $teamRepository->findAll();
+        $teams = $teamRepository->findBy([
+            "isActive" => true
+        ], ['id' => 'DESC']);
         return $this->render('frontend/pages/my_travel_agencey.html.twig', ["teams"=>$teams]);
     }
 

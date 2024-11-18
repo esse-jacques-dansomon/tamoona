@@ -96,3 +96,24 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .breadcrumb .breadcrumb-item li a {
     color: white;
 }
+
+/* Video Slide */
+.slide-video {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /*background-size: cover;*/
+    background-position: top;
+    /*object-fit: cover;*/
+}
+
+.banner .slider .swiper-container .swiper-slide .slide-inner .slide-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: top;
+}
