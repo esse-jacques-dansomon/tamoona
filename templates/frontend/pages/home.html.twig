@@ -3,11 +3,20 @@
                 {{ leogout_seo() }}
             {% endblock %}
 {% block body %}
-
+    {% set list = rwdgate.getSectionsList() %}
+    {{ rwdgate.getSection('HEAD')|raw }}
     <!-- banner starts -->
     {{ include('frontend/includes/slider.html.twig',  {'sliders':sliders}) }}
     <!-- banner ends -->
 
+
+    {% if 'BODY' in list %}
+        {{ rwdgate.getSection('BODY')|raw }}
+    {% else %}
+        {% if flightWidget is defined and flightWidget in list %}
+            {{ rwdgate.getSection(flightWidget)|raw }}
+        {% endif %}
+    {% endif %}
 
 
     <!-- why us starts -->
@@ -158,6 +167,6 @@
     </section>
     <!-- Newsletter Ends -->
 
-
+    {{ rwdgate.getSection('FOOTER')|raw }}
 
 {% endblock %}

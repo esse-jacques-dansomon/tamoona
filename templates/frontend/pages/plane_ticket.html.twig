@@ -1,0 +1,33 @@
+{% extends 'frontend/base.html.twig' %}
+
+{% block seo_head %}
+    {{ leogout_seo() }}
+{% endblock %}
+
+{% block body %}
+
+    {{ rwdgate.getSection('HEAD')|raw }}
+
+    <!-- BreadCrumb starts -->
+    {{ include('frontend/includes/bread_crumd.html.twig', {'page_name':'Réserver un billet'}) }}
+
+    <section class="contact-main pt-0 contact1 bg-grey">
+        <div class="container">
+            {% set list = rwdgate.getSectionsList() %}
+
+            {% if 'BODY' in list %}
+                <div style="margin-top:0px">
+                    {{ rwdgate.getSection('BODY')|raw }}
+                </div>
+            {% else %}
+                {% if flightWidget is defined and flightWidget in list %}
+                    {{ rwdgate.getSection(flightWidget)|raw }}
+                {% endif %}
+            {% endif %}
+        </div>
+    </section>
+
+    {{ rwdgate.getSection('FOOTER')|raw }}
+    {{ include('frontend/includes/form_on_all_page.html.twig') }}
+{% endblock %}
+

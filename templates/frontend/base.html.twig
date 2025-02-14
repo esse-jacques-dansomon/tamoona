@@ -30,11 +30,10 @@
     {% block javascripts %}
 
         <!-- Flashy depends on jQuery -->
-        <script src="//code.jquery.com/jquery.js"></script>
         <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
         {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
 
-        {% include("frontend//includes/js.html.twig") %}
+        {% include("frontend/includes/js.html.twig") %}
     {% endblock %}
 </body>
 
