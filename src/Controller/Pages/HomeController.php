@@ -138,7 +138,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/plane-ticket", name="plane_ticket", methods={"get"})
+     * @Route("/reservation", name="plane_ticket", methods={"get"})
      * @param Request $request
      * @return Response
      */
@@ -168,7 +168,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/plane-ticket/RWD/{path}", name="rwd_asset", requirements={"path"=".+"})
+     * @Route("/reservation/RWD/{path}", name="rwd_asset", requirements={"path"=".+"})
      */
     public function serveRwdAsset(string $path)
     {

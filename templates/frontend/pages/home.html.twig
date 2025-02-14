@@ -3,20 +3,35 @@
                 {{ leogout_seo() }}
             {% endblock %}
 {% block body %}
-    {% set list = rwdgate.getSectionsList() %}
-    {{ rwdgate.getSection('HEAD')|raw }}
+
+
     <!-- banner starts -->
     {{ include('frontend/includes/slider.html.twig',  {'sliders':sliders}) }}
     <!-- banner ends -->
 
+    <!-- why us starts -->
+    <div class="why-us pb-0">
+        <div class="container">
+            <div class="why-us-box">
+                <div class="row">
 
-    {% if 'BODY' in list %}
-        {{ rwdgate.getSection('BODY')|raw }}
-    {% else %}
-        {% if flightWidget is defined and flightWidget in list %}
-            {{ rwdgate.getSection(flightWidget)|raw }}
-        {% endif %}
-    {% endif %}
+                        {% set list = rwdgate.getSectionsList() %}
+                        {{ rwdgate.getSection('HEAD')|raw }}
+
+                        {% if 'BODY' in list %}
+                            {{ rwdgate.getSection('BODY')|raw }}
+                        {% else %}
+                            {% if flightWidget is defined and flightWidget in list %}
+                                {{ rwdgate.getSection(flightWidget)|raw }}
+                            {% endif %}
+                        {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <!-- why us starts -->
