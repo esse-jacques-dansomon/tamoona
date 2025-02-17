@@ -62,11 +62,11 @@ class HomeController extends AbstractController
     {
 
 
-        $affiliateId = $this->parameterBag->get('AFFILIATE_ID');
-        $flightWidget = $this->parameterBag->get('FLIGHT_WIDGET');
-        $rwdgate = new RwdGateService($affiliateId);
-        $widgets = [$flightWidget];
-        $rwdgate->fetch($widgets);
+//        $affiliateId = $this->parameterBag->get('AFFILIATE_ID');
+//        $flightWidget = $this->parameterBag->get('FLIGHT_WIDGET');
+//        $rwdgate = new RwdGateService($affiliateId);
+//        $widgets = [$flightWidget];
+//        $rwdgate->fetch($widgets);
 
         $featuredOffers = $featuredOfferRepository->findBy(["isActive" => true], ['id' => 'DESC']);
         $sliders = $sliderRepository->findByIsDisplayed(true);
@@ -88,8 +88,10 @@ class HomeController extends AbstractController
         }
 
         return $this->render('frontend/pages/home.html.twig',
-            ["sliders" => $sliders, "articles" => $articles, 'form' => $form->createView(), "featuredOffers" => $featuredOffers, 'rwdgate' => $rwdgate,
-                'flightWidget' => $flightWidget]);
+            ["sliders" => $sliders, "articles" => $articles, 'form' => $form->createView(), "featuredOffers" => $featuredOffers,
+                //'rwdgate' => $rwdgate,
+               // 'flightWidget' => $flightWidget
+            ]);
     }
 
     /**
